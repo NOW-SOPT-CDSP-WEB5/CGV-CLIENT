@@ -8,12 +8,16 @@ module.exports = {
 		'plugin:@typescript-eslint/recommended',
 		'plugin:react-hooks/recommended',
 		'airbnb',
+		'prettier',
 	],
 	ignorePatterns: ['dist', '.eslintrc.cjs'],
 	parser: '@typescript-eslint/parser',
 	plugins: ['react', 'react-hooks', 'react-refresh', '@typescript-eslint'],
 	rules: {
 		'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+		'react/jsx-filename-extension': ['warn', { extensions: ['.tsx'] }],
+		'react/react-in-jsx-scope': 'off',
+		'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
 	},
 
 	overrides: [
@@ -29,13 +33,7 @@ module.exports = {
 				'jest/globals': true,
 			},
 			plugins: ['jest', 'jest-dom', 'testing-library'],
-			extends: [
-				'plugin:jest/recommended',
-				'plugin:jest-dom/recommended',
-				'plugin:testing-library/react',
-			],
+			extends: ['plugin:jest/recommended', 'plugin:jest-dom/recommended', 'plugin:testing-library/react'],
 		},
 	],
-
-	'eslint.validate': ['javascript', 'javascriptreact', 'typescript', 'typescriptreact'],
 };
