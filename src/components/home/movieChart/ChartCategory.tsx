@@ -27,6 +27,7 @@ function ChartCategory() {
 const ChartCategoryLayout = styled.div`
 	display: flex;
 	gap: 0.8rem;
+	padding: 0 2rem;
 	overflow-x: scroll;
 
 	border-bottom: solid 0.5px ${({ theme }) => theme.GreyScale.LG};

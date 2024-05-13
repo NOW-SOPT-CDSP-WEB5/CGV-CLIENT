@@ -26,17 +26,17 @@ function MovieChart() {
 		</MovieChartContainer>
 	);
 }
+
 const MovieChartContainer = styled.section`
 	display: flex;
 	flex-direction: column;
-	margin-right: 2rem;
-	margin-left: 2rem;
 `;
 const MovieChartSectionTitle = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	margin-bottom: 0.7rem;
+	padding: 0 2rem;
 `;
 const OverViewBtn = styled.div`
 	display: flex;

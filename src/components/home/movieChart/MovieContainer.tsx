@@ -67,6 +67,7 @@ const MovieLayout = styled.div`
 	display: flex;
 	gap: 1rem;
 	margin: 2.3rem 0;
+	padding: 0 2rem;
 	overflow-x: scroll;
 
 	&::-webkit-scrollbar {
