@@ -5,6 +5,8 @@ import icHomeMy from './ic_home_my.svg';
 import icHomePopcorn from './ic_home_popcorn.svg';
 import icHomeSchedule from './ic_home_schedule.svg';
 import icHomeArrow from './ic_home_arrow1.svg';
+import icHomeEgg from './ic_home_egg.png';
+import icHomeLine from './ic_home_line.svg';
 
 const homeIcons = {
 	btnHomeSearch,
@@ -16,6 +18,8 @@ const homeIcons = {
 		icHomeSchedule,
 	},
 	icHomeArrow,
+	icHomeEgg,
+	icHomeLine,
 };
 
 export default homeIcons;
