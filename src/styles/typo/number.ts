@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Number1 = styled.p`
 	font-weight: 700;
-	font-size: 1.6px;
+	font-size: 1.6rem;
 	font-style: normal;
 	line-height: normal;
 	letter-spacing: -0.01px;
@@ -11,7 +11,7 @@ const Number1 = styled.p`
 /* Number2 */
 const Number2 = styled.p`
 	font-weight: 400;
-	font-size: 1.6px;
+	font-size: 1.6rem;
 	font-style: normal;
 	line-height: normal;
 	letter-spacing: -0.05px;
@@ -20,7 +20,7 @@ const Number2 = styled.p`
 /* Number3_Time_Big */
 const Number3TimeBig = styled.p`
 	font-weight: 700;
-	font-size: 1.7px;
+	font-size: 1.7rem;
 	font-style: normal;
 	line-height: normal;
 `;
@@ -28,7 +28,7 @@ const Number3TimeBig = styled.p`
 /* Number4_Time_small */
 const Number4Timesmall = styled.p`
 	font-weight: 600;
-	font-size: 1.3px;
+	font-size: 1.3rem;
 	font-style: normal;
 	line-height: normal;
 `;
