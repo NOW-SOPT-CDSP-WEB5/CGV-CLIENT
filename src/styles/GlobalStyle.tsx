@@ -37,11 +37,9 @@ footer, header, hgroup, menu, nav, section {
 
 /* 전체 배경 색상 설정 */
 html, body {
-    background-color: #e0e0e0;
-}
+    line-height: 1;
 
-body {
-	line-height: 1;
+    background-color: #e0e0e0;
 }
 
 ol, ul {
@@ -63,12 +61,14 @@ table {
 	border-spacing: 0;
 }
 
+/* body 영역 설정 */
 body {
     width: 375px; /* 모바일 가로 사이즈 375 고정 */
     margin: 0 auto; /* 중앙 정렬 */
     overflow-x: hidden; /* 가로 스크롤 방지 */
+
 	background-color: #fff; /* body 영역을 하얀색으로 설정 */
-  }
+}
 
 `;
 
