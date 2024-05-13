@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 import Typo from '../../styles/typo/typo';
 import homeIcons from '../../assets/home/icon';
+import ChartCategory from './movieChart/ChartCategory';
+import MovieContainer from './movieChart/MovieContainer';
+import PartitionBar from './PartitionBar';
 
 function MovieChart() {
 	return (
-		<div>
+		<MovieChartContainer>
+			{/* 무비차트 제목 */}
 			<MovieChartSectionTitle>
 				<Typo.Title.Title6B18>무비차트</Typo.Title.Title6B18>
 				<OverViewBtn>
@@ -12,17 +16,27 @@ function MovieChart() {
 					<img src={homeIcons.icHomeArrow} alt="arrow" />
 				</OverViewBtn>
 			</MovieChartSectionTitle>
-		</div>
+
+			{/* 차트목록 */}
+			<ChartCategory />
+
+			{/* 영화 차트 */}
+			<MovieContainer />
+			<PartitionBar />
+		</MovieChartContainer>
 	);
 }
-
+const MovieChartContainer = styled.section`
+	display: flex;
+	flex-direction: column;
+	margin-right: 2rem;
+	margin-left: 2rem;
+`;
 const MovieChartSectionTitle = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	margin-right: 2rem;
 	margin-bottom: 0.7rem;
-	margin-left: 2rem;
 `;
 const OverViewBtn = styled.div`
 	display: flex;
@@ -31,4 +45,5 @@ const OverViewBtn = styled.div`
 
 	color: ${({ theme }) => theme.GreyScale.MG};
 `;
+
 export default MovieChart;
