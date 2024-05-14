@@ -13,6 +13,11 @@ import movie3 from './movie/movie3.png';
 import movie4 from './movie/movie4.png';
 import movie5 from './movie/movie5.png';
 
+import thumbnail1 from './Recommend/thumbnail1.png';
+import thumbnail2 from './Recommend/thumbnail2.png';
+import thumbnail3 from './Recommend/thumbnail3.png';
+import thumbnail4 from './Recommend/thumbnail4.png';
+
 const homeImages = {
 	imgHomeLogo,
 	banner: { banner1, banner2, banner3, banner4, banner5, banner6 },
@@ -22,6 +27,12 @@ const homeImages = {
 		movie3,
 		movie4,
 		movie5,
+	},
+	recommend: {
+		thumbnail1,
+		thumbnail2,
+		thumbnail3,
+		thumbnail4,
 	},
 };
 
