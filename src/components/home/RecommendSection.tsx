@@ -12,7 +12,7 @@ function RecommendSection() {
 				</RecSecTitlePadd>
 				<RecVidSlot>
 					{recommendedMovie.map((movie) => (
-						<RecommendVideo movie={movie} />
+						<RecommendVideo key={movie.title} movie={movie} />
 					))}
 				</RecVidSlot>
 			</RecSecContainer>
