@@ -15,7 +15,6 @@ function MovieChart() {
 
 			{/* 영화 차트 */}
 			<MovieContainer />
-			<PartitionBar />
 		</MovieChartContainer>
 	);
 }
