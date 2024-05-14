@@ -48,7 +48,7 @@ function MovieInfo() {
 const MovieInfoContainer = styled.div`
 	display: flex;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: space-evenly;
 	height: 9.1rem;
 `;
 
@@ -56,6 +56,7 @@ const MovieInfoWapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	width: 9rem;
 `;
 
 const MovieInfoImg = styled.img`
