@@ -44,6 +44,8 @@ const ThumbnailPlayIco = styled.img`
 	transform: translate(-50%, -50%);
 `;
 const ThumbnailDescText = styled.div`
+	margin-top: 0.3rem;
+
 	color: ${({ theme }) => theme.GreyScale.MG};
 `;
 const ThumbnailDescContainer = styled.div`

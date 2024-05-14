@@ -33,6 +33,7 @@ const RecSecContainer = styled.div`
 	width: 100%;
 `;
 const RecSecTitlePadd = styled.div`
+	margin-bottom: 0.9rem;
 	padding: 0 2rem;
 `;
 const RecVidSlot = styled.div`
