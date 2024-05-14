@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Typo from '../../styles/typo/typo';
 import RecommendVideo from './RecommendVideo';
+import recommendedMovie from '../../constants/home/recommendedMovie';
 
 function RecommendSection() {
 	return (
@@ -10,12 +11,9 @@ function RecommendSection() {
 					<Typo.Title.Title8B15>추천 영화</Typo.Title.Title8B15>
 				</RecSecTitlePadd>
 				<RecVidSlot>
-					<RecommendVideo />
-					<RecommendVideo />
-					<RecommendVideo />
-					<RecommendVideo />
-					<RecommendVideo />
-					<RecommendVideo />
+					{recommendedMovie.map((movie) => (
+						<RecommendVideo movie={movie} />
+					))}
 				</RecVidSlot>
 			</RecSecContainer>
 		</RecSecLayout>

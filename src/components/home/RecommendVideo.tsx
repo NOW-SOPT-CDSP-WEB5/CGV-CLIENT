@@ -1,19 +1,23 @@
 import styled from 'styled-components';
-import homeImages from '../../assets/home/images';
 import Typo from '../../styles/typo/typo';
 import homeIcons from '../../assets/home/icon';
+import { HomeRecommededMovieType } from '../../types/home/types';
 
-function RecommendVideo() {
+type Props = {
+	movie: HomeRecommededMovieType;
+};
+function RecommendVideo({ movie }: Props) {
+	const { title, desc, img } = movie;
 	return (
 		<RecVidContainer>
 			<ThumbailContainer>
-				<ThumbnailImg src={homeImages.recommend.thumbnail1} alt="thumbnail1" />
+				<ThumbnailImg src={img} alt="thumbnail" />
 				<ThumbnailPlayIco src={homeIcons.btnHomeVideoPlay} alt="videoplay" />
 			</ThumbailContainer>
 			<ThumbnailDescContainer>
-				<Typo.Title.Title7B13>가필드 더 무비</Typo.Title.Title7B13>
+				<Typo.Title.Title7B13>{title}</Typo.Title.Title7B13>
 				<ThumbnailDescText>
-					<Typo.Caption.Caption3SB11>압도적 귀여움 가필드가 해냄!</Typo.Caption.Caption3SB11>
+					<Typo.Caption.Caption3SB11>{desc}</Typo.Caption.Caption3SB11>
 				</ThumbnailDescText>
 			</ThumbnailDescContainer>
 		</RecVidContainer>
