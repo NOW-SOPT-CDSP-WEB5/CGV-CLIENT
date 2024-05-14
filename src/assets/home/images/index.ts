@@ -1,4 +1,6 @@
 import imgHomeLogo from './img_home_logo.png';
+import homeAd1 from './img_home_ad1.png';
+import homeAd2 from './img_home_ad2.png';
 
 import banner1 from './banner/img_home_banner1.png';
 import banner2 from './banner/img_home_banner2.png';
@@ -13,8 +15,15 @@ import movie3 from './movie/movie3.png';
 import movie4 from './movie/movie4.png';
 import movie5 from './movie/movie5.png';
 
+import myCgv from './submenu/img_home_mycgv.png';
+import photoPlay from './submenu/img_home_photoplay.png';
+import discount from './submenu/img_home_discount.png';
+import store from './submenu/img_home_store.png';
+
 const homeImages = {
 	imgHomeLogo,
+	homeAd1,
+	homeAd2,
 	banner: { banner1, banner2, banner3, banner4, banner5, banner6 },
 	movie: {
 		movie1,
@@ -22,6 +31,12 @@ const homeImages = {
 		movie3,
 		movie4,
 		movie5,
+	},
+	subMenu: {
+		myCgv,
+		photoPlay,
+		discount,
+		store,
 	},
 };
 
