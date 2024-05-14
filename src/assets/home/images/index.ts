@@ -1,4 +1,5 @@
 import imgHomeLogo from './img_home_logo.png';
+import imgHomeSuite from './img_home_suitecinema.png';
 
 import banner1 from './banner/img_home_banner1.png';
 import banner2 from './banner/img_home_banner2.png';
@@ -15,6 +16,7 @@ import movie5 from './movie/movie5.png';
 
 const homeImages = {
 	imgHomeLogo,
+	imgHomeSuite,
 	banner: { banner1, banner2, banner3, banner4, banner5, banner6 },
 	movie: {
 		movie1,
