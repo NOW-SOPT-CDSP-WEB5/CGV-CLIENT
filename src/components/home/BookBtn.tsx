@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Typo from '../../../styles/typo/typo';
+import Typo from '../../styles/typo/typo';
 
 function BookBtn() {
 	return (
