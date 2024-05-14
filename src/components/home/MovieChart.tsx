@@ -3,7 +3,6 @@ import Typo from '../../styles/typo/typo';
 import homeIcons from '../../assets/home/icon';
 import ChartCategory from './movieChart/ChartCategory';
 import MovieContainer from './movieChart/MovieContainer';
-import PartitionBar from './PartitionBar';
 
 function MovieChart() {
 	return (
@@ -22,7 +21,6 @@ function MovieChart() {
 
 			{/* 영화 차트 */}
 			<MovieContainer />
-			<PartitionBar />
 		</MovieChartContainer>
 	);
 }
