@@ -1,9 +1,12 @@
-import styled from 'styled-components';
-import listImages from '../../assets/list/images';
-import Typo from '../../styles/typo/typo';
-import listIcons from '../../assets/list/icons';
+import styled, { useTheme } from 'styled-components';
+import listImages from '../../../assets/list/images';
+import Typo from '../../../styles/typo/typo';
+import listIcons from '../../../assets/list/icons';
+import MovieDesc from './MovieDesc';
+import MovieTypeTag from './MovieTypeTag';
 
 function ListMovie() {
+	const theme = useTheme();
 	return (
 		<MovieLayout>
 			<MovieContainer>
@@ -17,21 +20,11 @@ function ListMovie() {
 								<AgeImg src={listIcons.movie.icListAge} alt="age15" />
 							</MovieTitleWrapper>
 
-							<Typo.Body.Body5M13>액션 | 범죄</Typo.Body.Body5M13>
-							<MovieDescWrapper>
-								<Typo.Body.Body5M13>개봉일</Typo.Body.Body5M13>
-								<Typo.Body.Body6B13>2024.04.24</Typo.Body.Body6B13>
-							</MovieDescWrapper>
-							<MovieDescWrapper>
-								<Typo.Body.Body5M13>예매율</Typo.Body.Body5M13>
-								<Typo.Body.Body6B13>91.4%</Typo.Body.Body6B13>
-							</MovieDescWrapper>
+							<Typo.Body.Body5M13 style={{ color: `${theme.Color.Red}` }}>액션 | 범죄</Typo.Body.Body5M13>
+							<MovieDesc p1="개봉일" p2="2024.04.24" />
+							<MovieDesc p1="예매율" p2="91.4%" />
 						</MovieDescContainer>
-
-						<MovieTypeTagSlot>
-							<MovieTypeTagImg src={listIcons.movie.tags.icMovieTypeIMAX} alt="IMAX" />
-							<MovieTypeTagImg src={listIcons.movie.tags.icMovieType4DX} alt="4DX" />
-						</MovieTypeTagSlot>
+						<MovieTypeTag />
 					</MovieContentWrapper>
 				</MovieBox>
 				<BookNowBtn type="button">
@@ -77,22 +70,11 @@ const MovieTitleWrapper = styled.div`
 	display: flex;
 	gap: 0.7rem;
 `;
-const MovieDescWrapper = styled.div`
-	display: flex;
-	gap: 0.9rem;
-`;
+
 const MovieDescContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 0.4rem;
-`;
-const MovieTypeTagSlot = styled.div`
-	display: flex;
-	gap: 0.5rem;
-`;
-const MovieTypeTagImg = styled.img`
-	width: 4.6rem;
-	height: 2rem;
 `;
 
 const BookNowBtn = styled.button`

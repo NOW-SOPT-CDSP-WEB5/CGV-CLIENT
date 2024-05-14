@@ -3,7 +3,7 @@ import listImages from '../assets/list/images';
 import MainTopBar from '../components/common/MainTopBar';
 
 import ListControlBar from '../components/list/ListControlBar';
-import ListMovie from '../components/list/ListMovie';
+import ListMovie from '../components/list/movie/ListMovie';
 
 function List() {
 	return (
