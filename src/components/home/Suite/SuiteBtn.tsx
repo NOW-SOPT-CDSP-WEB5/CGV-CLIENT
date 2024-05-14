@@ -3,7 +3,7 @@ import homeIcons from '../../../assets/home/icon';
 
 function SuiteBtn() {
 	return (
-		<SuiteEntireBtn>
+		<SuiteEntireBtn type="button">
 			특별관 전체보기
 			<img src={homeIcons.icHomeArrow} alt="arrow" />
 		</SuiteEntireBtn>
