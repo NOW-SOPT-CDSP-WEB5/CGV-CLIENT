@@ -1,9 +1,9 @@
 import styled from 'styled-components';
+import fontWeight from './fontWeight';
 
 /* Title1_SB_16 */
 const Title1SB16 = styled.h2`
-	font-weight: 600;
-	font-size: 1.6rem;
+	${fontWeight.SemiBold}
 	font-style: normal;
 	line-height: normal;
 	letter-spacing: -0.05rem;
@@ -11,7 +11,7 @@ const Title1SB16 = styled.h2`
 
 /* Title2_SB_15 */
 const Title2SB15 = styled.h2`
-	font-weight: 600;
+	${fontWeight.SemiBold}
 	font-size: 1.5rem;
 	font-style: normal;
 	line-height: 130%;
@@ -20,7 +20,7 @@ const Title2SB15 = styled.h2`
 
 /* Title3_SB_14 */
 const Title3SB14 = styled.h2`
-	font-weight: 600;
+	${fontWeight.SemiBold}
 	font-size: 1.4rem;
 	font-style: normal;
 	line-height: 175%; /* 24.5px */
@@ -29,7 +29,7 @@ const Title3SB14 = styled.h2`
 
 /* Title4_M_16 */
 const Title4M16 = styled.h2`
-	font-weight: 500;
+	${fontWeight.Medium}
 	font-size: 1.6rem;
 	font-style: normal;
 	line-height: normal;
@@ -38,7 +38,7 @@ const Title4M16 = styled.h2`
 
 /* Title5_M_15 */
 const Title5M15 = styled.h2`
-	font-weight: 500;
+	${fontWeight.Medium}
 	font-size: 1.6rem;
 	font-style: normal;
 	line-height: normal;
@@ -47,7 +47,7 @@ const Title5M15 = styled.h2`
 
 /* Title6_B_18 */
 const Title6B18 = styled.h2`
-	font-weight: 700;
+	${fontWeight.Bold}
 	font-size: 1.8rem;
 	font-style: normal;
 	line-height: normal;
@@ -55,7 +55,7 @@ const Title6B18 = styled.h2`
 
 /* Title7_B_13 */
 const Title7B13 = styled.h2`
-	font-weight: 700;
+	${fontWeight.Bold}
 	font-size: 1.3rem;
 	font-style: normal;
 	line-height: normal;
@@ -64,7 +64,7 @@ const Title7B13 = styled.h2`
 
 /* Title8_B_15 */
 const Title8B15 = styled.h2`
-	font-weight: 700;
+	${fontWeight.Bold}
 	font-size: 1.5rem;
 	font-style: normal;
 	line-height: 175%; /* 26.25px */
@@ -73,7 +73,7 @@ const Title8B15 = styled.h2`
 
 /* Title9_B_14 */
 const Title9B14 = styled.h2`
-	font-weight: 700;
+	${fontWeight.Bold}
 	font-size: 1.4rem;
 	font-style: normal;
 	line-height: 150%; /* 21px */
@@ -81,7 +81,7 @@ const Title9B14 = styled.h2`
 
 /* Title10_B_19 */
 const Title10B19 = styled.h2`
-	font-weight: 800;
+	${fontWeight.Bold}
 	font-size: 1.9rem;
 	font-style: normal;
 	line-height: normal;
@@ -89,7 +89,7 @@ const Title10B19 = styled.h2`
 
 /* Title11_R_15 */
 const Title11R15 = styled.h2`
-	font-weight: 400;
+	${fontWeight.Regular}
 	font-size: 1.5rem;
 	font-style: normal;
 	line-height: 130%; /* 19.5px */
