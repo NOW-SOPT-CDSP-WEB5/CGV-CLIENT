@@ -8,6 +8,7 @@ import TapBar from '../components/home/TapBar';
 import RecommendSection from '../components/home/RecommendSection';
 import SubMenu from '../components/home/SubMenu';
 import MainTopBar from '../components/common/MainTopBar';
+import IceConSection from '../components/home/IceConSection';
 
 function Home() {
 	return (
@@ -17,6 +18,9 @@ function Home() {
 			<Banner />
 			<MovieChart />
 			<SpecialCinema />
+			<PartitionBar />
+			<IceConSection />
+			<PartitionBar />
 			<RecommendSection />
 			<PartitionBar />
 			<SubMenu />

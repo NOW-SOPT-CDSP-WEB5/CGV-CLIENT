@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import homeImages from '../../../assets/home/images';
 import Typo from '../../../styles/typo/typo';
 import homeIcons from '../../../assets/home/icon';
-import BookBtn from './BookBtn';
+import BookBtn from '../BookBtn';
 
 function MovieContainer() {
 	return (

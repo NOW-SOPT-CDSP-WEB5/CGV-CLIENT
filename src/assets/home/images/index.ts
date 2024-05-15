@@ -27,6 +27,9 @@ import photoPlay from './submenu/img_home_photoplay.png';
 import discount from './submenu/img_home_discount.png';
 import store from './submenu/img_home_store.png';
 
+import imgHomeIcecon from './icecon/img_home_icecon.png';
+import imgHomeIceconBg from './icecon/img_home_iceconbg.png';
+
 const homeImages = {
 	imgHomeLogo,
 	imgHomeSuite,
@@ -45,12 +48,16 @@ const homeImages = {
 		thumbnail2,
 		thumbnail3,
 		thumbnail4,
-  },
+	},
 	subMenu: {
 		myCgv,
 		photoPlay,
 		discount,
 		store,
+	},
+	icecon: {
+		imgHomeIcecon,
+		imgHomeIceconBg,
 	},
 };
 
