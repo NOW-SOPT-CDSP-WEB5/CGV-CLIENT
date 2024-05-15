@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import timeButtons from '../../assets/time/buttons';
 import timeImages from '../../assets/time/images';
 import timeIcon from '../../assets/time/icon';
+import AddMovieTheaterWrapper from './AddMovieTheaterWrapper';
+import AddMovieTheaterImg from './AddMovieTheaterImg';
 
 function AddMovieTheater() {
 	return (
@@ -36,20 +38,11 @@ const AddMovieTheaterContainer = styled.div`
 	margin: 4rem 1.2rem 0;
 `;
 
-const AddMovieTheaterWrapper = styled.div`
-	position: relative;
-`;
 const AddMovieTheaterButton = styled.div`
 	z-index: 1;
 	padding: 0 0.2rem;
 
 	cursor: pointer;
-`;
-const AddMovieTheaterImg = styled.img`
-	z-index: 1;
-
-	cursor: pointer;
-	filter: drop-shadow(0 0.4rem 0.4rem rgb(0 0 0 / 13%));
 `;
 
 const BackSemiCircleImg = styled.img`
