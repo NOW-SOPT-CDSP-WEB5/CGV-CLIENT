@@ -7,16 +7,20 @@ import SpecialCinema from '../components/home/SpecialCinema';
 import TapBar from '../components/home/TapBar';
 import RecommendSection from '../components/home/RecommendSection';
 import SubMenu from '../components/home/SubMenu';
-import TopBar from '../components/home/TopBar';
+import MainTopBar from '../components/common/MainTopBar';
+import IceConSection from '../components/home/IceConSection';
 
 function Home() {
 	return (
 		<>
-			<TopBar />
+			<MainTopBar location="home" />
 			<NavBar />
 			<Banner />
 			<MovieChart />
 			<SpecialCinema />
+			<PartitionBar />
+			<IceConSection />
+			<PartitionBar />
 			<RecommendSection />
 			<PartitionBar />
 			<SubMenu />
