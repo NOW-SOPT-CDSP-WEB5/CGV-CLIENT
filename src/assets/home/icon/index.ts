@@ -1,4 +1,5 @@
 import btnHomeSearch from './btn_home_search.svg';
+import btnHomeVideoPlay from './btn_home_videoplay.svg';
 import icHomeBook from './ic_home_book.svg';
 import icHomeHome from './ic_home_home.svg';
 import icHomeMy from './ic_home_my.svg';
@@ -10,6 +11,7 @@ import icHomeLine from './ic_home_line.svg';
 
 const homeIcons = {
 	btnHomeSearch,
+	btnHomeVideoPlay,
 	tapBar: {
 		icHomeBook,
 		icHomeHome,
