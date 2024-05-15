@@ -9,8 +9,6 @@ import fontWeight from './fontWeight';
 const Head1SB17 = styled.h1`
 	${fontWeight.SemiBold}
 	font-size: 1.7rem;
-	font-style: normal;
-	line-height: normal;
 	letter-spacing: -0.02rem;
 `;
 
