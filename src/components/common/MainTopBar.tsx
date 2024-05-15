@@ -1,12 +1,23 @@
 import styled from 'styled-components';
 import homeImages from '../../assets/home/images';
 import homeIcons from '../../assets/home/icon';
-import IconContainer from '../common/IconContainer';
+import IconContainer from './IconContainer';
+import Typo from '../../styles/typo/typo';
 
-function TopBar() {
+type Props = {
+	location: string;
+};
+/** home, list page TopBar */
+function MainTopBar(props: Props) {
+	const { location } = props;
 	return (
 		<BarContainer>
-			<LogoImg src={homeImages.imgHomeLogo} alt="CGV logo" />
+			{location === 'list' ? (
+				<Typo.Head.Head1SB17>영화</Typo.Head.Head1SB17>
+			) : (
+				<LogoImg src={homeImages.imgHomeLogo} alt="CGV logo" />
+			)}
+
 			<SearchIconWrapper>
 				<IconContainer>
 					<img src={homeIcons.btnHomeSearch} alt="search" />
@@ -33,4 +44,4 @@ const SearchIconWrapper = styled.div`
 	position: absolute;
 	right: 0;
 `;
-export default TopBar;
+export default MainTopBar;
