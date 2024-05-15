@@ -1,4 +1,4 @@
-import styled, { useTheme } from 'styled-components';
+import styled from 'styled-components';
 import listImages from '../../../assets/list/images';
 import Typo from '../../../styles/typo/typo';
 import listIcons from '../../../assets/list/icons';
@@ -6,7 +6,6 @@ import MovieDesc from './MovieDesc';
 import MovieTypeTag from './MovieTypeTag';
 
 function ListMovie() {
-	const theme = useTheme();
 	return (
 		<MovieLayout>
 			<MovieContainer>
@@ -20,7 +19,7 @@ function ListMovie() {
 								<AgeImg src={listIcons.movie.icListAge} alt="age15" />
 							</MovieTitleWrapper>
 
-							<Typo.Body.Body5M13 style={{ color: `${theme.Color.Red}` }}>액션 | 범죄</Typo.Body.Body5M13>
+							<RedBody5M13>액션 | 범죄</RedBody5M13>
 							<MovieDesc p1="개봉일" p2="2024.04.24" />
 							<MovieDesc p1="예매율" p2="91.4%" />
 						</MovieDescContainer>
@@ -70,7 +69,9 @@ const MovieTitleWrapper = styled.div`
 	display: flex;
 	gap: 0.7rem;
 `;
-
+const RedBody5M13 = styled(Typo.Body.Body5M13)`
+	color: ${({ theme }) => theme.Color.Red};
+`;
 const MovieDescContainer = styled.div`
 	display: flex;
 	flex-direction: column;
