@@ -68,6 +68,7 @@ const MovieContentWrapper = styled.div`
 const MovieTitleWrapper = styled.div`
 	display: flex;
 	gap: 0.7rem;
+	margin-top: 0.6rem;
 `;
 const RedBody5M13 = styled(Typo.Body.Body5M13)`
 	color: ${({ theme }) => theme.Color.Red};
