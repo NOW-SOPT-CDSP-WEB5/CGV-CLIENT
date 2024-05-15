@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import IconContainer from '../common/IconContainer';
 import commonIcons from '../../assets/common/icon';
+import Typo from '../../styles/typo/typo';
 
 function TopBar() {
 	return (
@@ -10,7 +11,9 @@ function TopBar() {
 					<img src={commonIcons.icArrowLeft} alt="left arrow" />
 				</IconContainer>
 			</LeftArrowIconWrapper>
-			<CenterTitleWrapper>빠른 예매</CenterTitleWrapper>
+			<CenterTitleWrapper>
+				<Typo.Head.Head1SB17>빠른 예매 </Typo.Head.Head1SB17>
+			</CenterTitleWrapper>
 		</BarContainer>
 	);
 }
@@ -33,7 +36,5 @@ const LeftArrowIconWrapper = styled.div`
 const CenterTitleWrapper = styled.div`
 	display: flex;
 	justify-content: center;
-
-	font-size: 1.7rem;
 `;
 export default TopBar;
