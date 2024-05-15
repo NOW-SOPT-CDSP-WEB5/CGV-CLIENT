@@ -8,6 +8,8 @@ import icMovieGoldenEgg from './ic_movie_goldenegg.svg';
 import icBtnTicketing from './btn_fab_ticketing.svg';
 import icBtnHeartDisabled from './btn_fab_heart_disabled.svg';
 import icBtnShare from './btn_fab_share.svg';
+import icMoviePercent from './ic_movie_percent.svg';
+import icMovieStar from './ic_movie_star.svg';
 
 const movieIcons = {
 	tapBar: {
@@ -22,6 +24,10 @@ const movieIcons = {
 		icMovieEgg,
 		icMovieTicket,
 		icMovieGoldenEgg,
+	},
+	movieDetail: {
+		icMoviePercent,
+		icMovieStar,
 	},
 	BottomBar: {
 		icBtnTicketing,
