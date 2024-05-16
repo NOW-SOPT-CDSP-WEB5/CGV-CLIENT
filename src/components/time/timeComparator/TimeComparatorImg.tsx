@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-interface AddMovieTheaterImgProps {
+interface TimeComparatorImgProps {
 	src: string;
 	alt: string;
 }
 
-function AddMovieTheaterImg({ src, alt }: AddMovieTheaterImgProps) {
+function TimeComparatorImg({ src, alt }: TimeComparatorImgProps) {
 	return <Image src={src} alt={alt} />;
 }
 
@@ -15,4 +15,4 @@ const Image = styled.img`
 	cursor: pointer;
 	filter: drop-shadow(0 0.4rem 0.4rem rgb(0 0 0 / 13%));
 `;
-export default AddMovieTheaterImg;
+export default TimeComparatorImg;

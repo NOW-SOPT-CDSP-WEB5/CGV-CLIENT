@@ -2,19 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-interface AddMovieTheaterWrapperProps {
+interface TimeComparatorWrapperProps {
 	children: React.ReactNode;
 }
 
-function AddMovieTheaterWrapper({ children }: AddMovieTheaterWrapperProps) {
+function TimeComparatorWrapper({ children }: TimeComparatorWrapperProps) {
 	return <Wrapper>{children}</Wrapper>;
 }
 
-AddMovieTheaterWrapper.propTypes = {
+TimeComparatorWrapper.propTypes = {
 	children: PropTypes.node.isRequired,
 };
 
 const Wrapper = styled.div`
 	position: relative;
 `;
-export default AddMovieTheaterWrapper;
+export default TimeComparatorWrapper;

@@ -1,4 +1,4 @@
-import AddMovieTheater from '../components/time/AddMovieTheater';
+import AddMovieTheater from '../components/time/timeComparator/TimeComparator';
 import TopBar from '../components/time/TopBar';
 import ThisWeek from '../components/time/dateSelect/ThisWeek';
 import EachCinemaTimeList from '../components/time/timeList/EachCinemaTimeList';
