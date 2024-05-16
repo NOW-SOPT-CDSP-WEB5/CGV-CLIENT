@@ -15,32 +15,31 @@ function CancelModal({ onClickToggleModal, children }: PropsWithChildren<CancelM
 	const handleCancelClick = () => {
 		setCancelConfirmed(true);
 	};
-	if (isCancelConfirmed) {
-		return (
-			<Modal onClickToggleModal={onClickToggleModal}>
-				<CancelConfirmModal />
-			</Modal>
-		);
-	}
+
 	return (
 		<Modal onClickToggleModal={onClickToggleModal}>
-			<CancelTitle>
-				예매한 &lt;범죄도시4&gt;
-				<br /> 영화를 취소하시겠어요?
-			</CancelTitle>
-			<Theater>강남 CGV 1관 6층</Theater>
-			<Typo.Title.Title6B18>07:40 ~ 09:39</Typo.Title.Title6B18>
-			<CancelMsg>취소 후 되돌릴 수 없으니 신중하게 선택해주세요</CancelMsg>
-			{children}
-			<ButtonWrapper>
-				<CloseButton type="button" onClick={onClickToggleModal}>
-					<Typo.Head.Head1SB17>닫기</Typo.Head.Head1SB17>
-				</CloseButton>
-
-				<CancelButton type="button" onClick={handleCancelClick}>
-					<Typo.Head.Head1SB17>예매 취소하기</Typo.Head.Head1SB17>
-				</CancelButton>
-			</ButtonWrapper>
+			{isCancelConfirmed ? (
+				<CancelConfirmModal />
+			) : (
+				<>
+					<CancelTitle>
+						예매한 &lt;범죄도시4&gt;
+						<br /> 영화를 취소하시겠어요?
+					</CancelTitle>
+					<Theater>강남 CGV 1관 6층</Theater>
+					<Typo.Title.Title6B18>07:40 ~ 09:39</Typo.Title.Title6B18>
+					<CancelMsg>취소 후 되돌릴 수 없으니 신중하게 선택해주세요</CancelMsg>
+					{children}
+					<ButtonWrapper>
+						<CloseButton type="button" onClick={onClickToggleModal}>
+							<Typo.Head.Head1SB17>닫기</Typo.Head.Head1SB17>
+						</CloseButton>
+						<CancelButton type="button" onClick={handleCancelClick}>
+							<Typo.Head.Head1SB17>예매 취소하기</Typo.Head.Head1SB17>
+						</CancelButton>
+					</ButtonWrapper>
+				</>
+			)}
 		</Modal>
 	);
 }
@@ -55,6 +54,7 @@ const CancelButton = styled.button`
 	border: none;
 	border-bottom-right-radius: 8px;
 `;
+
 const CloseButton = styled.button`
 	width: 14.7rem;
 	height: 5.2rem;
@@ -77,9 +77,11 @@ const ButtonWrapper = styled.div`
 	bottom: 30rem;
 	display: flex;
 `;
+
 const Theater = styled(Typo.Title.Title3SB14)`
 	color: ${({ theme }) => theme.Color.Point};
 `;
+
 const CancelMsg = styled(Typo.Caption.Caption2R11)`
 	padding: 1.2rem 0 3.5rem;
 
