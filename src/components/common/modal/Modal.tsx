@@ -50,7 +50,9 @@ const Backdrop = styled.div`
 	top: 0;
 	z-index: 9999;
 
-	width: 100vw;
+	width: 375px;
+
+	/* TODO: 모바일 화면 크기 나오면 height 조절 */
 	height: 100vh;
 
 	background-color: ${({ theme }) => theme.Transparent.Black75};
