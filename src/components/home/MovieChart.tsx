@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import ChartCategory from './movieChart/ChartCategory';
 import MovieContainer from './movieChart/MovieContainer';
-import PartitionBar from './PartitionBar';
 import HomeSectionTitle from './HomeSectionTitle';
 
 function MovieChart() {
