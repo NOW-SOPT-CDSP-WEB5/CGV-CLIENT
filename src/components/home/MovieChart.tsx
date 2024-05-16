@@ -7,7 +7,7 @@ function MovieChart() {
 	return (
 		<MovieChartContainer>
 			{/* 무비차트 제목 */}
-			<HomeSectionTitle text="무비차트" />
+			<HomeSectionTitle text="무비차트" main />
 
 			{/* 차트목록 */}
 			<ChartCategory />

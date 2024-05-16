@@ -2,14 +2,14 @@ import styled from 'styled-components';
 import Typo from '../../styles/typo/typo';
 import OverViewBtn from './OverViewBtn';
 
-type Props = { text: string };
+type Props = { text: string; main: boolean };
 
 /** 섹션제목 */
 function HomeSectionTitle(props: Props) {
-	const { text } = props;
+	const { text, main } = props;
 	return (
 		<SectionTitle>
-			<Typo.Title.Title6B18>{text}</Typo.Title.Title6B18>
+			{main ? <Typo.Title.Title6B18>{text}</Typo.Title.Title6B18> : <Typo.Title.Title8B15>{text}</Typo.Title.Title8B15>}
 			<OverViewBtn />
 		</SectionTitle>
 	);
