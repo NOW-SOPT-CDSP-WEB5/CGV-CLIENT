@@ -1,7 +1,7 @@
 import AddMovieTheater from '../components/time/timeComparator/TimeComparator';
 import TopBar from '../components/time/TopBar';
 import ThisWeek from '../components/time/dateSelect/ThisWeek';
-import EachCinemaTimeList from '../components/time/timeList/EachCinemaTimeList';
+import TimeList from '../components/time/timeList/TimeList';
 
 function Time() {
 	return (
@@ -9,7 +9,7 @@ function Time() {
 			<TopBar />
 			<AddMovieTheater />
 			<ThisWeek />
-			<EachCinemaTimeList />
+			<TimeList />
 		</div>
 	);
 }
