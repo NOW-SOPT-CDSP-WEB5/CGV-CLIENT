@@ -55,8 +55,8 @@ const AudienceTitleWapper = styled.div`
 
 const AudienceTitle = styled.div`
 	display: flex;
-	gap: 1rem;
-	align-items: flex-end;
+	gap: 0.5rem;
+	justify-content: flex-start;
 `;
 
 const AudienceDate = styled(Typo.Caption.Caption1M10)`
