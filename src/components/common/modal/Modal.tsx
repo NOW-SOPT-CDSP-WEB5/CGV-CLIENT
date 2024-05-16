@@ -7,15 +7,14 @@ interface ModalProps {
 
 /** 모달창 프레임 함수 */
 function Modal({ onClickToggleModal, children }: PropsWithChildren<ModalProps>) {
+	const handleBackdropClick = (e: React.MouseEvent) => {
+		e.preventDefault();
+		onClickToggleModal();
+	};
 	return (
 		<ModalContainer>
 			<DialogBox>{children}</DialogBox>
-			<Backdrop
-				onClick={(e: React.MouseEvent) => {
-					e.preventDefault();
-					onClickToggleModal();
-				}}
-			/>
+			<Backdrop onClick={handleBackdropClick} />
 		</ModalContainer>
 	);
 }
