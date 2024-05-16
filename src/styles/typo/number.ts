@@ -1,36 +1,29 @@
 import styled from 'styled-components';
+import fontWeight from './fontWeight';
 
 const Number1 = styled.p`
-	font-weight: 700;
+	${fontWeight.Bold}
 	font-size: 1.6rem;
-	font-style: normal;
-	line-height: normal;
-	letter-spacing: -0.01px;
+	letter-spacing: -0.01rem;
 `;
 
 /* Number2 */
 const Number2 = styled.p`
-	font-weight: 400;
+	${fontWeight.Regular}
 	font-size: 1.6rem;
-	font-style: normal;
-	line-height: normal;
-	letter-spacing: -0.05px;
+	letter-spacing: -0.05rem;
 `;
 
 /* Number3_Time_Big */
 const Number3TimeBig = styled.p`
-	font-weight: 700;
+	${fontWeight.Bold}
 	font-size: 1.7rem;
-	font-style: normal;
-	line-height: normal;
 `;
 
 /* Number4_Time_small */
 const Number4Timesmall = styled.p`
-	font-weight: 600;
+	${fontWeight.SemiBold}
 	font-size: 1.3rem;
-	font-style: normal;
-	line-height: normal;
 `;
 
 const NumberTypo = {

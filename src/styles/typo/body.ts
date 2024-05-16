@@ -1,54 +1,45 @@
 import styled from 'styled-components';
+import fontWeight from './fontWeight';
 
 const Body1R12 = styled.p`
-	font-weight: 400;
+	${fontWeight.Regular}
 	font-size: 1.3rem;
-	font-style: normal;
-	line-height: normal;
 `;
 
 /* Body2_R_12_-0.5 */
 const Body2R12 = styled.p`
-	font-weight: 400;
+	${fontWeight.Regular}
 	font-size: 1.2rem;
-	font-style: normal;
-	line-height: normal;
 	letter-spacing: -0.05rem;
 `;
 
 /* Body3_M_14 */
 const Body3M14 = styled.p`
-	font-weight: 500;
+	${fontWeight.Medium}
 	font-size: 1.4rem;
-	font-style: normal;
 	line-height: 145%; /* 20.3px */
 	letter-spacing: -0.03rem;
 `;
 
 /* Body4_R_14 */
 const Body4R14 = styled.p`
-	font-weight: 400;
+	${fontWeight.Regular}
 	font-size: 1.4rem;
-	font-style: normal;
 	line-height: 175%; /* 24.5px */
 	letter-spacing: -0.1rem;
 `;
 
 /* Body5_M_13 */
 const Body5M13 = styled.p`
-	font-weight: 500;
+	${fontWeight.Medium}
 	font-size: 1.3rem;
-	font-style: normal;
-	line-height: normal;
 	letter-spacing: -0.03rem;
 `;
 
 /* Body6_B_13 */
 const Body6B13 = styled.p`
-	font-weight: 700;
+	${fontWeight.Bold}
 	font-size: 1.3rem;
-	font-style: normal;
-	line-height: normal;
 	letter-spacing: -0.03rem;
 `;
 
