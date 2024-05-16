@@ -3,13 +3,12 @@ import CaptionTypo from './caption';
 import TitleTypo from './title';
 import BodyTypo from './body';
 import NumberTypo from './number';
+import fontWeight from './fontWeight';
 
 /* Head1_SB_17 */
 const Head1SB17 = styled.h1`
-	font-weight: 600;
+	${fontWeight.SemiBold}
 	font-size: 1.7rem;
-	font-style: normal;
-	line-height: normal;
 	letter-spacing: -0.02rem;
 `;
 
