@@ -55,6 +55,8 @@ const MovieImgContainer = styled.div`
 const MovieImg = styled.img`
 	width: 100%;
 	height: 100%;
+
+	border-radius: 10px;
 `;
 const MovieImgTxtWrapper = styled.div`
 	position: absolute;
