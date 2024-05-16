@@ -6,14 +6,17 @@ import timeButtons from '../../../assets/time/buttons';
 
 function MiddleBar() {
 	return (
-		<MiddleBarContainer>
-			<MovieInfoWrapper>
-				<img src={timeImages.imgTimePosterMini} alt="범죄도시 포스터" />
-				<Typo.Head.Head1SB17>범죄도시4</Typo.Head.Head1SB17>
-				<img src={listIcons.movie.icListAge} alt="15세 관람가" width={20} height={20} />
-			</MovieInfoWrapper>
-			<img src={timeButtons.BtnTimeMovieinfo} alt="영화정보" />
-		</MiddleBarContainer>
+		<>
+			<Gap />
+			<MiddleBarContainer>
+				<MovieInfoWrapper>
+					<img src={timeImages.imgTimePosterMini} alt="범죄도시 포스터" />
+					<Typo.Head.Head1SB17>범죄도시4</Typo.Head.Head1SB17>
+					<img src={listIcons.movie.icListAge} alt="15세 관람가" width={20} height={20} />
+				</MovieInfoWrapper>
+				<img src={timeButtons.BtnTimeMovieinfo} alt="영화정보" />
+			</MiddleBarContainer>
+		</>
 	);
 }
 
@@ -31,4 +34,10 @@ const MovieInfoWrapper = styled.div`
 	align-items: center;
 	justify-content: center;
 	margin: 0 14rem 0 1rem;
+`;
+const Gap = styled.div`
+	width: 37.5rem;
+	height: 0.7rem;
+
+	background-color: ${({ theme }) => theme.GreyScale.LG2};
 `;
