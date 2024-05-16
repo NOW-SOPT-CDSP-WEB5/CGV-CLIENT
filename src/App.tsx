@@ -8,7 +8,6 @@ function App() {
 		<ThemeProvider theme={theme}>
 			<GlobalFont />
 			<GlobalStyles />
-			<p>sample</p>
 		</ThemeProvider>
 	);
 }
