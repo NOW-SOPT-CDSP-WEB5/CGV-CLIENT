@@ -19,7 +19,7 @@ const getColorByDay = ($dayOfWeek: string): string => {
 		case '토':
 			return '#66B3FC';
 		case '일':
-			return '#CC222B';
+			return '#F84C4C';
 		default:
 			return '#373737';
 	}
@@ -89,7 +89,7 @@ const WeekDateDay = styled(Typo.Head.Head1SB17)`
 `;
 
 const LabelRed = styled(Typo.Body.Body5M13)`
-	color: ${(props) => props.theme.Color.Red};
+	color: ${(props) => props.theme.Color.Point};
 `;
 
 const TodayWrapper = styled.div`
