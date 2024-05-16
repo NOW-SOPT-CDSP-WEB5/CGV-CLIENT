@@ -89,7 +89,7 @@ const MovieDetailContainer = styled.div`
 	display: flex;
 	gap: 0.6rem;
 	align-items: center;
-	margin-top: 0.2rem;
+	margin-top: 0.3rem;
 	margin-bottom: 1rem;
 `;
 const EggImg = styled.img`
