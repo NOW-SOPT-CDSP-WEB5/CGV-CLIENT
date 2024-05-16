@@ -37,7 +37,7 @@ const DialogBox = styled.dialog`
 	justify-content: center;
 	box-sizing: border-box;
 	width: 29.4rem;
-	height: 17.5rem;
+	height: 22.6rem;
 
 	background-color: white;
 	box-shadow: 0 0 30px rgb(30 30 30 / 18.5%);

@@ -1,7 +1,8 @@
-import React, { PropsWithChildren } from 'react';
+import React, { useState, PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import Modal from '../../common/modal/Modal';
 import Typo from '../../../styles/typo/typo';
+import CancelConfirmModal from './CancelConfirmModal';
 
 interface CancelModalProps {
 	onClickToggleModal: () => void;
@@ -9,6 +10,18 @@ interface CancelModalProps {
 
 /** 예매취소 모달 내용 */
 function CancelModal({ onClickToggleModal, children }: PropsWithChildren<CancelModalProps>) {
+	const [isCancelConfirmed, setCancelConfirmed] = useState(false);
+
+	const handleCancelClick = () => {
+		setCancelConfirmed(true);
+	};
+	if (isCancelConfirmed) {
+		return (
+			<Modal onClickToggleModal={onClickToggleModal}>
+				<CancelConfirmModal />
+			</Modal>
+		);
+	}
 	return (
 		<Modal onClickToggleModal={onClickToggleModal}>
 			<CancelTitle>
@@ -24,7 +37,7 @@ function CancelModal({ onClickToggleModal, children }: PropsWithChildren<CancelM
 					<Typo.Head.Head1SB17>닫기</Typo.Head.Head1SB17>
 				</CloseButton>
 
-				<CancelButton type="button">
+				<CancelButton type="button" onClick={handleCancelClick}>
 					<Typo.Head.Head1SB17>예매 취소하기</Typo.Head.Head1SB17>
 				</CancelButton>
 			</ButtonWrapper>
@@ -54,21 +67,21 @@ const CloseButton = styled.button`
 `;
 
 const CancelTitle = styled(Typo.Head.Head1SB17)`
-	padding-bottom: 1rem;
+	padding-bottom: 1.4rem;
 
 	text-align: center;
 `;
 
 const ButtonWrapper = styled.div`
 	position: fixed;
-	bottom: 29rem;
+	bottom: 30rem;
 	display: flex;
 `;
 const Theater = styled(Typo.Title.Title3SB14)`
 	color: ${({ theme }) => theme.Color.Point};
 `;
 const CancelMsg = styled(Typo.Caption.Caption2R11)`
-	padding-top: 0.8rem;
+	padding: 1.2rem 0 3.5rem;
 
 	color: ${({ theme }) => theme.GreyScale.MG};
 `;
