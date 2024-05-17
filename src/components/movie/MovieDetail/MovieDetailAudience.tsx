@@ -84,7 +84,7 @@ const AudienceContent = styled.div`
 `;
 
 const AudienceContentTitle = styled(Typo.Title.Title3SB14)`
-	margin-bottom: 0.8rem;
+	margin-bottom: 1rem;
 
 	color: ${({ theme }) => theme.GreyScale.DG};
 `;
