@@ -12,13 +12,13 @@ function DetailStillcut() {
 
 			<StillcutImgContainer>
 				<StillcutImgWapper>
-					<img src={movieImages.moviePosterImg.moviePosterImg1} alt="범죄도시 포스터1" />
-					<img src={movieImages.moviePosterImg.moviePosterImg2} alt="범죄도시 포스터2" />
+					<StillcutImgLeft src={movieImages.moviePosterImg.moviePosterImg1} alt="범죄도시 포스터1" />
+					<StillcutImgLeft src={movieImages.moviePosterImg.moviePosterImg2} alt="범죄도시 포스터2" />
 				</StillcutImgWapper>
 				<StillcutImgWapper>
-					<img src={movieImages.moviePosterImg.moviePosterImg3} alt="범죄도시 포스터3" />
-					<img src={movieImages.moviePosterImg.moviePosterImg4} alt="범죄도시 포스터4" />
-					<img src={movieImages.moviePosterImg.moviePosterImg5} alt="범죄도시 포스터5" />
+					<StillcutImgRight src={movieImages.moviePosterImg.moviePosterImg3} alt="범죄도시 포스터3" />
+					<StillcutImgRight src={movieImages.moviePosterImg.moviePosterImg4} alt="범죄도시 포스터4" />
+					<StillcutImgRight src={movieImages.moviePosterImg.moviePosterImg5} alt="범죄도시 포스터5" />
 				</StillcutImgWapper>
 			</StillcutImgContainer>
 		</StillcutLayout>
@@ -49,6 +49,16 @@ const StillcutImgWapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 1.2rem;
+`;
+
+const StillcutImgLeft = styled.img`
+	width: 16.2rem;
+	height: 16.2rem;
+`;
+
+const StillcutImgRight = styled.img`
+	width: 16.2rem;
+	height: 10.4;
 `;
 
 export default DetailStillcut;

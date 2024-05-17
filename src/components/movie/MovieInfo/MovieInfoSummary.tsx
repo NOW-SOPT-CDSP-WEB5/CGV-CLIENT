@@ -3,15 +3,15 @@ import { useState } from 'react';
 import Typo from '../../../styles/typo/typo';
 
 function InfoSummary() {
-	const [summaryBtn, setSummaryBtn] = useState(false);
+	const [showSummary, setShowSummary] = useState(false);
 
 	const handleSummaryBtn = () => {
-		setSummaryBtn(!summaryBtn);
+		setShowSummary(!showSummary);
 	};
 
 	return (
 		<InfoSummaryContainer>
-			<InfoSummaryWapper expanded={summaryBtn}>
+			<InfoSummaryWapper expanded={showSummary}>
 				신종 마약 사건 3년 뒤, 괴물형사 ‘마석도’(마동석)와 서울 광수대는 배달앱을 이용한 마약 판매 사건을 수사하던 중{' '}
 				<br />
 				수배 중인 앱 개발자가 필리핀에서 사망한 사건이 대규모 온라인 불법 도박 조직과 연관되어 있음을 알아낸다. <br />
@@ -24,7 +24,7 @@ function InfoSummary() {
 				나쁜 놈 잡는데 국경도 영역도 제한 없다! 업그레이드 소탕 작전! 거침없이 싹 쓸어버린다!
 			</InfoSummaryWapper>
 			<InfoSummaryBtn type="button" onClick={handleSummaryBtn}>
-				<InfoSummaryBtnText>{summaryBtn ? '접기' : '자세히 보기'}</InfoSummaryBtnText>
+				<InfoSummaryBtnText>{showSummary ? '접기' : '자세히 보기'}</InfoSummaryBtnText>
 			</InfoSummaryBtn>
 		</InfoSummaryContainer>
 	);
