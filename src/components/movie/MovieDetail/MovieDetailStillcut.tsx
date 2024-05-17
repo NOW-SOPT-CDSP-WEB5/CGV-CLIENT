@@ -29,6 +29,7 @@ const StillcutLayout = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin-bottom: 2rem;
 `;
 
 const StillcutTitle = styled.div`
@@ -47,7 +48,7 @@ const StillcutImgContainer = styled.div`
 const StillcutImgWapper = styled.div`
 	display: flex;
 	flex-direction: column;
-	gap: 1.1rem;
+	gap: 1.2rem;
 `;
 
 export default DetailStillcut;
