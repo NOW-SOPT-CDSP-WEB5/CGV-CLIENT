@@ -75,6 +75,7 @@ const AudienceContentWapper = styled.div`
 const AudienceContent = styled.div`
 	display: flex;
 	flex-direction: column;
+	gap: 0.3rem;
 	justify-content: center;
 	width: 16.2rem;
 	height: 10.8rem;
@@ -85,7 +86,7 @@ const AudienceContent = styled.div`
 `;
 
 const AudienceContentTitle = styled(Typo.Title.Title3SB14)`
-	margin-bottom: 1rem;
+	margin-bottom: 0.5rem;
 
 	color: ${({ theme }) => theme.GreyScale.DG};
 `;
@@ -102,6 +103,7 @@ const AudienceContentSub = styled(Typo.Body.Body1R12)`
 
 const AudienceContentStar = styled.img`
 	width: 1.8rem;
+	margin-bottom: 0.1rem;
 `;
 
 export default DetailAudience;

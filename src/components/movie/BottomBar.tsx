@@ -21,6 +21,8 @@ function BottomBar() {
 }
 
 const BottomBarWapper = styled.div`
+	position: fixed;
+	bottom: 0;
 	display: flex;
 	gap: 0;
 `;

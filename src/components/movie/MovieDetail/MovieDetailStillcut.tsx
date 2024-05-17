@@ -29,7 +29,7 @@ const StillcutLayout = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-bottom: 2rem;
+	padding-bottom: 8rem;
 `;
 
 const StillcutTitle = styled.div`
