@@ -35,7 +35,7 @@ function Footer() {
 
 export default Footer;
 
-const FooterTopLabel = styled.p`
+const FooterTopLabel = styled(Typo.Body.Body2R12)`
 	margin: 2.8rem;
 `;
 
@@ -45,6 +45,8 @@ const FooterTopContainer = styled.div`
 	justify-content: space-between;
 	width: 37.5rem;
 	height: 4rem;
+
+	color: ${({ color, theme }) => color || theme.GreyScale.BG};
 
 	background-color: ${({ theme }) => theme.GreyScale.LG2};
 `;
