@@ -15,10 +15,12 @@ const TopBarWapper = styled.div`
 	display: flex;
 	align-items: center;
 	height: 4.4rem;
+	margin-left: 1rem;
 `;
 
 const TopIcon = styled.img`
 	width: 3.2rem;
+	margin-right: 0.1rem;
 `;
 
 export default TopBar;
