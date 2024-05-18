@@ -3,6 +3,7 @@ import GlobalStyles from './styles/GlobalStyle';
 import theme from './styles/theme';
 import GlobalFont from './styles/GlobalFont';
 import Router from './Router';
+import Footer from './components/common/Footer';
 
 function App() {
 	return (
@@ -10,6 +11,7 @@ function App() {
 			<GlobalFont />
 			<GlobalStyles />
 			<Router />
+			<Footer/>
 		</ThemeProvider>
 	);
 }
