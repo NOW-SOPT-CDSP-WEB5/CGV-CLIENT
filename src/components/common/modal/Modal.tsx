@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react';
+import React, { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 
 interface ModalProps {
@@ -21,6 +21,8 @@ function Modal({ onClickToggleModal, children }: PropsWithChildren<ModalProps>) 
 
 const ModalContainer = styled.div`
 	position: fixed;
+	top: 0;
+	left: 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -28,7 +30,7 @@ const ModalContainer = styled.div`
 	height: 100%;
 `;
 
-const DialogBox = styled.dialog`
+const DialogBox = styled.div`
 	z-index: 10000;
 	display: flex;
 	flex-direction: column;
@@ -47,11 +49,11 @@ const DialogBox = styled.dialog`
 const Backdrop = styled.div`
 	position: fixed;
 	top: 0;
+	left: 0;
 	z-index: 9999;
 
-	width: 375px;
-
 	/* TODO: 모바일 화면 크기 나오면 height 조절 */
+	width: 100%;
 	height: 100vh;
 
 	background-color: ${({ theme }) => theme.Transparent.Black75};
