@@ -9,7 +9,7 @@ function SpecialCinema() {
 	return (
 		<SpecialCinemaLayout>
 			<TitleWrapper>
-				<HomeSectionTitle text="특별관" />
+				<HomeSectionTitle text="특별관" main={false} />
 			</TitleWrapper>
 			<SuiteCinema>
 				<Typo.Title.Title3SB14>SUITE CINEMA</Typo.Title.Title3SB14>

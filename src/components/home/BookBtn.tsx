@@ -11,7 +11,8 @@ function BookBtn() {
 
 const BookBtnContainer = styled.button`
 	width: 10rem;
-	height: 2.8rem;
+	height: fit-content;
+	padding: 0.6rem 1rem;
 
 	background-color: ${({ theme }) => theme.GreyScale.White};
 	border: solid 1px ${({ theme }) => theme.GreyScale.BG};

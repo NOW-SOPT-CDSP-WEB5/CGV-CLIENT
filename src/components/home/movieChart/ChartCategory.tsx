@@ -27,10 +27,7 @@ function ChartCategory() {
 const ChartCategoryLayout = styled.div`
 	display: flex;
 	gap: 0.8rem;
-	padding: 0 2rem;
 	overflow-x: scroll;
-
-	border-bottom: solid 0.5px ${({ theme }) => theme.GreyScale.LG};
 
 	&::-webkit-scrollbar {
 		display: none;
@@ -40,6 +37,9 @@ const ChartCategoryContainer = styled.div`
 	display: flex;
 	gap: 0.8rem;
 	width: fit-content;
+	margin: 0 2rem;
+
+	border-bottom: solid 0.5px ${({ theme }) => theme.GreyScale.LG};
 `;
 const ChartCategoryBtn = styled.div<{ $focused?: boolean }>`
 	flex-shrink: 0;

@@ -17,15 +17,16 @@ function Home() {
 			<NavBar />
 			<Banner />
 			<MovieChart />
-			<SpecialCinema />
+			<PartitionBar />
+			<SubMenu />
+			<PartitionBar />
+			<AdSection />
 			<PartitionBar />
 			<IceConSection />
 			<PartitionBar />
 			<RecommendSection />
 			<PartitionBar />
-			<SubMenu />
-			<PartitionBar />
-			<AdSection />
+			<SpecialCinema />
 			<PartitionBar />
 			<TapBar />
 		</>
