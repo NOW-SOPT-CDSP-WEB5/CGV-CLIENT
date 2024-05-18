@@ -4,6 +4,7 @@ import fontWeight from './fontWeight';
 /* Title1_SB_16 */
 const Title1SB16 = styled.h2`
 	${fontWeight.SemiBold}
+	font-size: 1.6rem;
 	letter-spacing: -0.05rem;
 `;
 

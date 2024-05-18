@@ -63,7 +63,9 @@ const MoviePosterTextWapper = styled.div`
 	top: 18.5rem;
 	display: flex;
 	flex-direction: column;
+	gap: 0.5rem;
 	align-items: center;
+
 `;
 
 const MovieTitleText = styled(Typo.Title.Title6B18)`
@@ -73,7 +75,7 @@ const MovieTitleText = styled(Typo.Title.Title6B18)`
 `;
 
 const MovieSubTitleText = styled(Typo.Body.Body1R12)`
-	margin-bottom: 1rem;
+	margin-bottom: 0.5rem;
 
 	color: ${({ theme }) => theme.Transparent.White40};
 `;
