@@ -1,4 +1,4 @@
-import React, { useState, PropsWithChildren } from 'react';
+import { useState, PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import Modal from '../../common/modal/Modal';
 import Typo from '../../../styles/typo/typo';
