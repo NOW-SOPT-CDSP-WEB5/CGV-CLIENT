@@ -35,7 +35,7 @@ function Banner() {
 			moveBanner();
 		}, 3000);
 		return () => {
-			clearInterval(time);
+			clearTimeout(time);
 		};
 	}, [current]);
 
