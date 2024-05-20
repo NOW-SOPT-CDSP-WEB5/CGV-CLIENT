@@ -5,6 +5,7 @@ import MainTopBar from '../components/common/MainTopBar';
 import ListControlBar from '../components/list/ListControlBar';
 import ListMovie from '../components/list/movie/ListMovie';
 import Footer from '../components/common/Footer';
+import PartitionBar from '../components/home/PartitionBar';
 
 function List() {
 	return (
@@ -20,6 +21,7 @@ function List() {
 				<ListMovie />
 				<ListMovie />
 			</ListMovieContainer>
+			<Partition />
 			<Footer />
 		</>
 	);
@@ -31,5 +33,9 @@ const ListAdImg = styled.img`
 const ListMovieContainer = styled.section`
 	display: flex;
 	flex-direction: column;
+`;
+
+const Partition = styled(PartitionBar)`
+	height: 3.2rem;
 `;
 export default List;
