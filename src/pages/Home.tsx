@@ -9,6 +9,7 @@ import RecommendSection from '../components/home/RecommendSection';
 import SubMenu from '../components/home/SubMenu';
 import MainTopBar from '../components/common/MainTopBar';
 import IceConSection from '../components/home/IceConSection';
+import Footer from '../components/common/Footer';
 
 function Home() {
 	return (
@@ -28,6 +29,7 @@ function Home() {
 			<PartitionBar />
 			<SpecialCinema />
 			<PartitionBar />
+			<Footer />
 			<TapBar />
 		</>
 	);

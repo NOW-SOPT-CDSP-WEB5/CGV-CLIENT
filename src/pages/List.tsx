@@ -4,6 +4,7 @@ import MainTopBar from '../components/common/MainTopBar';
 
 import ListControlBar from '../components/list/ListControlBar';
 import ListMovie from '../components/list/movie/ListMovie';
+import Footer from '../components/common/Footer';
 
 function List() {
 	return (
@@ -19,6 +20,7 @@ function List() {
 				<ListMovie />
 				<ListMovie />
 			</ListMovieContainer>
+			<Footer />
 		</>
 	);
 }
