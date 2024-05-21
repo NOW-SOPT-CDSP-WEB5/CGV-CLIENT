@@ -11,6 +11,5 @@ function AdSection() {
 }
 const AdImg = styled.img`
 	width: 100%;
-	height: fit-content;
 `;
 export default AdSection;
