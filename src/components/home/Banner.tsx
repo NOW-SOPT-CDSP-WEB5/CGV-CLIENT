@@ -2,19 +2,29 @@ import styled from 'styled-components';
 import { useEffect, useRef, useState } from 'react';
 import homeImages from '../../assets/home/images';
 import Typo from '../../styles/typo/typo';
+import getAds from '../../apis/getAds';
+import { HomeBannerAdType } from '../../types/home/types';
 
 function Banner() {
-	const bannerImgData = [
-		{ id: 'banner1', img: homeImages.banner.banner1 },
-		{ id: 'banner2', img: homeImages.banner.banner2 },
-		{ id: 'banner3', img: homeImages.banner.banner3 },
-		{ id: 'banner4', img: homeImages.banner.banner4 },
-		{ id: 'banner5', img: homeImages.banner.banner5 },
-		{ id: 'banner6', img: homeImages.banner.banner6 },
-	];
+	const [bannerImgData, setBannerImgData] = useState<HomeBannerAdType[]>([
+		{ id: 1, url: homeImages.banner.banner1 },
+		{ id: 2, url: homeImages.banner.banner2 },
+		{ id: 3, url: homeImages.banner.banner3 },
+		{ id: 4, url: homeImages.banner.banner4 },
+		{ id: 5, url: homeImages.banner.banner5 },
+		{ id: 6, url: homeImages.banner.banner6 },
+	]);
 	const [current, setCurrent] = useState(0);
 	const bannerLen = bannerImgData.length;
 	const bannerRef = useRef<HTMLDivElement>(null);
+
+	const loadBannerData = async () => {
+		const res = await getAds();
+		setBannerImgData(res);
+	};
+	useEffect(() => {
+		loadBannerData();
+	}, []);
 
 	/** 배너 돌리기 */
 	const moveBanner = () => {
@@ -43,7 +53,7 @@ function Banner() {
 		<BannerContainer>
 			<BannerWrapper ref={bannerRef}>
 				{bannerImgData.map((banner) => (
-					<BannerImg key={banner.id} src={banner.img} alt={banner.id} />
+					<BannerImg key={banner.id} src={banner.url} alt={`${banner.id}bannerAd`} />
 				))}
 			</BannerWrapper>
 			<BannerIdxTxt>
