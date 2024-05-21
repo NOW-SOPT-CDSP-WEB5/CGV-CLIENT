@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 import Typo from '../../../styles/typo/typo';
 import movieIcons from '../../../assets/movie/icon';
+import { formatToday } from '../../../utils/time/dateUtils';
 
 function DetailAudience() {
+	const today = new Date();
+
 	return (
 		<AudienceTitleLayout>
 			<AudienceTitleWapper>
@@ -10,7 +13,7 @@ function DetailAudience() {
 					<Typo.Title.Title1SB16>누적 관객수</Typo.Title.Title1SB16>
 					<Typo.Title.Title11R15>871만명</Typo.Title.Title11R15>
 				</AudienceTitle>
-				<AudienceDate>2024.05.08 기준</AudienceDate>
+				<AudienceDate>{formatToday(today)}</AudienceDate>
 			</AudienceTitleWapper>
 			<AudienceContentWapper>
 				<AudienceContent>
@@ -69,7 +72,7 @@ const AudienceContentWapper = styled.div`
 	gap: 1rem;
 	justify-content: space-between;
 	width: 33.5rem;
-    margin-bottom: 4.5rem;
+	margin-bottom: 4.5rem;
 `;
 
 const AudienceContent = styled.div`
