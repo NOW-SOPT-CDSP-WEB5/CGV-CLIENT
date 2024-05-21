@@ -1,19 +1,12 @@
 import styled from 'styled-components';
 import { useEffect, useRef, useState } from 'react';
-import homeImages from '../../assets/home/images';
 import Typo from '../../styles/typo/typo';
 import getAds from '../../apis/getAds';
 import { HomeBannerAdType } from '../../types/home/types';
+import homeBannerData from '../../constants/home/homeBannerData';
 
 function Banner() {
-	const [bannerImgData, setBannerImgData] = useState<HomeBannerAdType[]>([
-		{ id: 1, url: homeImages.banner.banner1 },
-		{ id: 2, url: homeImages.banner.banner2 },
-		{ id: 3, url: homeImages.banner.banner3 },
-		{ id: 4, url: homeImages.banner.banner4 },
-		{ id: 5, url: homeImages.banner.banner5 },
-		{ id: 6, url: homeImages.banner.banner6 },
-	]);
+	const [bannerImgData, setBannerImgData] = useState<HomeBannerAdType[]>(homeBannerData);
 	const [current, setCurrent] = useState(0);
 	const bannerLen = bannerImgData.length;
 	const bannerRef = useRef<HTMLDivElement>(null);
