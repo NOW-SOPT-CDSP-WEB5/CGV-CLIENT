@@ -22,11 +22,13 @@ function BookingModal({ onClickToggleModal, children }: PropsWithChildren<Bookin
 				<BookingConfirmModal />
 			) : (
 				<>
-					<BookingTitle>범죄도시4</BookingTitle>
-					<Theater>강남 CGV 1관 6층</Theater>
-					<Typo.Title.Title6B18>07:40 ~ 09:39</Typo.Title.Title6B18>
-					<BookingMsg>영화 정보와 극장, 상영관과 영화 시간을 확인해주세요</BookingMsg>
-					{children}
+					<BookingModalWrpaper>
+						<BookingTitle>범죄도시4</BookingTitle>
+						<Theater>강남 CGV 1관 6층</Theater>
+						<Typo.Title.Title6B18>07:40 ~ 09:39</Typo.Title.Title6B18>
+						<BookingMsg>영화 정보와 극장, 상영관과 영화 시간을 확인해주세요</BookingMsg>
+						{children}
+					</BookingModalWrpaper>
 					<ButtonWrapper>
 						<CloseButton type="button" onClick={onClickToggleModal}>
 							<Typo.Head.Head1SB17>취소</Typo.Head.Head1SB17>
@@ -40,6 +42,13 @@ function BookingModal({ onClickToggleModal, children }: PropsWithChildren<Bookin
 		</Modal>
 	);
 }
+
+const BookingModalWrpaper = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+`;
 
 const BookingButton = styled.button`
 	width: 14.7rem;
