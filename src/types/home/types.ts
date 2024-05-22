@@ -17,6 +17,7 @@ export interface MovieListType {
 	imageUrl: string;
 	genres: string;
 	theaterType: string;
+}
 
 export interface HomeBannerAdType {
 	id: number;
