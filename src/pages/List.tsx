@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import FadeLoader from 'react-spinners/FadeLoader';
 import listImages from '../assets/list/images';
 import MainTopBar from '../components/common/MainTopBar';
 import ListControlBar from '../components/list/ListControlBar';
@@ -11,6 +12,7 @@ function List() {
 		<ListLayout>
 			<ListAdImg src={listImages.listAd} />
 			<MainTopBar location="list" />
+			<FadeLoader color="grey" loading aria-label="Loading Spinner" data-testid="loader" />
 			<ListControlBar />
 			<ListMovieContainer>
 				<ListMovie />
