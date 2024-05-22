@@ -7,10 +7,11 @@ import icMovieTicket from './ic_movie_ticket.svg';
 import icMovieGoldenEgg from './ic_movie_goldenegg.svg';
 import icBtnTicketing from './btn_fab_ticketing.svg';
 import icBtnHeartDisabled from './btn_fab_heart_disabled.svg';
+import icBtnHeartActivate from './btn_fab_heart_activate.svg';
 import icBtnShare from './btn_fab_share.svg';
 import icMoviePercent from './ic_movie_percent.svg';
 import icMovieStar from './ic_movie_star.svg';
-import icMovieDetail from './btn_movie_detail.svg'
+import icMovieDetail from './btn_movie_detail.svg';
 
 const movieIcons = {
 	tapBar: {
@@ -25,7 +26,7 @@ const movieIcons = {
 		icMovieEgg,
 		icMovieTicket,
 		icMovieGoldenEgg,
-		icMovieDetail
+		icMovieDetail,
 	},
 	movieDetail: {
 		icMoviePercent,
@@ -34,6 +35,7 @@ const movieIcons = {
 	BottomBar: {
 		icBtnTicketing,
 		icBtnHeartDisabled,
+		icBtnHeartActivate,
 		icBtnShare,
 	},
 };

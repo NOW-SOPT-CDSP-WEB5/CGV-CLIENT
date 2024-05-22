@@ -1,12 +1,39 @@
 import styled from 'styled-components';
+import { useState, useEffect } from 'react';
 import movieIcons from '../../assets/movie/icon';
 import Typo from '../../styles/typo/typo';
+import getDetail from '../../apis/getDetail';
 
 function BottomBar() {
+	const [like, setLike] = useState<boolean>(false);
+	const [ticket, setTicket] = useState<boolean>(false);
+
+	const loadLikeData = async (movieId: number) => {
+		const res = await getDetail(movieId);
+		if (res) {
+			setLike(res.isLiked);
+		}
+	};
+
+	const loadTicketData = async (movieId: number) => {
+		const res = await getDetail(movieId);
+		if (res) {
+			setTicket(res.isTicketed);
+		}
+	};
+
+	useEffect(() => {
+		loadLikeData(3);
+		loadTicketData(3);
+	}, [like, ticket]);
+
 	return (
 		<BottomBarWapper>
 			<BottomBarBtn type="button">
-				<img src={movieIcons.BottomBar.icBtnHeartDisabled} alt="btn-heart-disabled" />
+				<img
+					src={like ? movieIcons.BottomBar.icBtnHeartActivate : movieIcons.BottomBar.icBtnHeartDisabled}
+					alt="like"
+				/>
 			</BottomBarBtn>
 
 			<BottomBarBtn type="button">
@@ -14,7 +41,7 @@ function BottomBar() {
 			</BottomBarBtn>
 
 			<TicketBtn type="button">
-				<TicketText>지금 예매하기</TicketText>
+				<TicketText>{ticket ? '예매된 영화' : '지금 예매하기'}</TicketText>
 			</TicketBtn>
 		</BottomBarWapper>
 	);
