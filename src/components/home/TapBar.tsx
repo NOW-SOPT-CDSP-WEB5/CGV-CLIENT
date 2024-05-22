@@ -34,15 +34,14 @@ function TapBar() {
 
 const TapBarContainer = styled.div`
 	position: fixed;
-	right: 0;
 	bottom: 0;
-	left: 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	justify-self: center;
 	width: 375px;
 	height: 7rem;
+	margin: 0 auto;
 
 	background-color: ${({ theme }) => theme.GreyScale.White};
 	box-shadow: 0 -12px 10px -3px rgb(0 0 0 / 25%);

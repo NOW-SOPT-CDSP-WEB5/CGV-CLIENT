@@ -39,7 +39,7 @@ const Gap = styled.div`
 	width: 37.5rem;
 	height: 0.7rem;
 
-	background-color: ${({ theme }) => theme.GreyScale.LG2};
+	background-color: ${({ theme }) => theme.GreyScale.Background};
 `;
 
 const Poster = styled.img`
