@@ -4,3 +4,8 @@ export interface HomeRecommededMovieType {
 	desc: string;
 	img: string;
 }
+
+export interface HomeBannerAdType {
+	id: number;
+	url: string;
+}
