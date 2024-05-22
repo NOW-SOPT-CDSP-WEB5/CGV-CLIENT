@@ -3,7 +3,9 @@ import icListEclipseMG from './ic_eclipse_MG.svg';
 import icListCheck from './ic_list_check.svg';
 
 // movie
-import icListAge from './ic_home_age.png';
+import icListAge12 from './ic_home_age_12.png';
+import icListAge15 from './ic_home_age_15.png';
+import icListAgeAll from './ic_home_age_all.png';
 
 // tags
 import icMovieTypeIMAX from './ic_list_movietype_IMAX.png';
@@ -15,7 +17,9 @@ const listIcons = {
 	icListEclipseMG,
 	icListCheck,
 	movie: {
-		icListAge,
+		icListAge12,
+		icListAge15,
+		icListAgeAll,
 		tags: {
 			icMovieTypeIMAX,
 			icMovieType4DX,
