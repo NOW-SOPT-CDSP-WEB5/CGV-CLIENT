@@ -9,9 +9,10 @@ import Footer from '../components/common/Footer';
 import PartitionBar from '../components/home/PartitionBar';
 import getMovieList from '../apis/getMovieList';
 import { MovieListType } from '../types/home/types';
+import movieListDummy from '../constants/list/movieListDummy';
 
 function List() {
-	const [movieList, setMovieList] = useState<MovieListType[]>([]);
+	const [movieList, setMovieList] = useState<MovieListType[]>([movieListDummy]);
 	const [loading, setLoading] = useState<boolean>(true);
 	const handleGetMovieList = async () => {
 		setLoading(true);
@@ -31,7 +32,7 @@ function List() {
 				{loading ? (
 					<FadeLoader color="grey" loading aria-label="Loading Spinner" data-testid="loader" />
 				) : (
-					movieList.map((movie) => <ListMovie key={movie.name} movie={movie} />)
+					movieList?.map((movie) => <ListMovie key={movie.name} movie={movie} />)
 				)}
 			</ListMovieContainer>
 			<Partition />
