@@ -1,4 +1,4 @@
-import { AxiosError } from 'axios';
+import { isAxiosError } from 'axios';
 import serverAxios from './serverAxios';
 import { HomeBannerAdType } from '../types/home/types';
 
@@ -8,7 +8,7 @@ const getAds: () => Promise<HomeBannerAdType[]> = async () => {
 		const res = await serverAxios.get('/api/v1/advertisements');
 		return res.data.advertisements;
 	} catch (error) {
-		if (error instanceof AxiosError) {
+		if (isAxiosError(error)) {
 			const statusCode = error.response?.status;
 			let errorMessage = 'error occurred';
 			if (!statusCode) {
