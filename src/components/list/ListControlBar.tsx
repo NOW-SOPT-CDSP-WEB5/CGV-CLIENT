@@ -26,15 +26,15 @@ function ListControlBar() {
 const ListControlContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
+	width: 100%;
 	height: 4.4rem;
-	padding-right: 1.3rem;
-	padding-left: 1rem;
 
 	background-color: ${({ theme }) => theme.GreyScale.Background};
 `;
 const SortBtnContainer = styled.div`
 	display: flex;
 	gap: 1.7rem;
+	padding-left: 1rem;
 `;
 
 const SortBtn = styled.button<{ $focused?: boolean }>`
@@ -52,5 +52,6 @@ const SortBtn = styled.button<{ $focused?: boolean }>`
 `;
 const CheckBtn = styled(SortBtn)`
 	gap: 0;
+	padding-right: 1.3rem;
 `;
 export default ListControlBar;

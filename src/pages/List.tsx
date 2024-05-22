@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import listImages from '../assets/list/images';
 import MainTopBar from '../components/common/MainTopBar';
-
 import ListControlBar from '../components/list/ListControlBar';
 import ListMovie from '../components/list/movie/ListMovie';
 import Footer from '../components/common/Footer';
@@ -9,7 +8,7 @@ import PartitionBar from '../components/home/PartitionBar';
 
 function List() {
 	return (
-		<>
+		<ListLayout>
 			<ListAdImg src={listImages.listAd} />
 			<MainTopBar location="list" />
 			<ListControlBar />
@@ -23,10 +22,15 @@ function List() {
 			</ListMovieContainer>
 			<Partition />
 			<Footer />
-		</>
+		</ListLayout>
 	);
 }
-
+const ListLayout = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+`;
 const ListAdImg = styled.img`
 	width: 100%;
 `;
