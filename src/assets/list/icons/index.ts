@@ -5,6 +5,7 @@ import icListCheck from './ic_list_check.svg';
 // movie
 import icListAge12 from './ic_home_age_12.png';
 import icListAge15 from './ic_home_age_15.png';
+import icListAge18 from './ic_home_age_18.png';
 import icListAgeAll from './ic_home_age_all.png';
 
 // tags
@@ -19,6 +20,7 @@ const listIcons = {
 	movie: {
 		icListAge12,
 		icListAge15,
+		icListAge18,
 		icListAgeAll,
 		tags: {
 			icMovieTypeIMAX,

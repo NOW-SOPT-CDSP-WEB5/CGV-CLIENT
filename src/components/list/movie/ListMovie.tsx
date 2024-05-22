@@ -20,8 +20,7 @@ function ListMovie({
 				ageIcon = listIcons.movie.icListAge15;
 				break;
 			case '18':
-				// 이미지 추가 필요
-				ageIcon = listIcons.movie.icListAge15;
+				ageIcon = listIcons.movie.icListAge18;
 				break;
 			case 'All':
 				ageIcon = listIcons.movie.icListAgeAll;
