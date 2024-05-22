@@ -5,7 +5,6 @@ import serverAxios from './serverAxios';
 const postMoviesTickets = async () => {
 	try {
 		const response = await serverAxios.post('/api/v1/movies/3/tickets', { theaterId: 1 });
-		console.log('Response:', response.data);
 		return response;
 	} catch (error) {
 		if (isAxiosError(error)) {

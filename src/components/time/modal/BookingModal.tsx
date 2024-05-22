@@ -12,9 +12,7 @@ interface BookingModalProps {
 /** 예매 모달 내용 */
 function BookingModal({ onClickToggleModal, onConfirmBooking, children }: PropsWithChildren<BookingModalProps>) {
 	const handleBookingClick = async () => {
-		const res = await postMoviesTickets();
-		console.log(res);
-
+		await postMoviesTickets();
 		onConfirmBooking(); // 예매 확인 모달 표시
 	};
 
