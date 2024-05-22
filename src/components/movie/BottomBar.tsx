@@ -4,6 +4,7 @@ import movieIcons from '../../assets/movie/icon';
 import Typo from '../../styles/typo/typo';
 import getDetail from '../../apis/getDetail';
 import postHearts from '../../apis/postHearts';
+import DeleteHearts from '../../apis/DeleteHearts';
 
 function BottomBar() {
 	const [like, setLike] = useState<boolean>(false);
@@ -29,9 +30,16 @@ function BottomBar() {
 	}, [like, ticket]);
 
 	const handleHeartBtn = async (movieId: number) => {
-		const res = await postHearts(movieId);
-		if (res) {
-			setLike(true);
+		if (like) {
+			const res = await DeleteHearts(movieId);
+			if (res) {
+				setLike(false);
+			}
+		} else {
+			const res = await postHearts(movieId);
+			if (res) {
+				setLike(true);
+			}
 		}
 	};
 
