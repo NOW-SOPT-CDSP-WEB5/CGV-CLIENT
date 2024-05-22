@@ -6,7 +6,7 @@ import Typo from '../../styles/typo/typo';
 function MoviePoster() {
 	return (
 		<MoviePosterContainer>
-			<MoviePosterImg src={MoviePosterImgEx} alt="범죄도시" />
+			<MoviePosterImg src={MoviePosterImgEx} alt="범죄도시4" />
 			<GradientOverlay />
 			<MoviePlayingIcon src={MovieIcons.moviePoster.icMoviePlaying} alt="playing" />
 			<MoviePosterTextWapper>
@@ -65,7 +65,6 @@ const MoviePosterTextWapper = styled.div`
 	flex-direction: column;
 	gap: 0.5rem;
 	align-items: center;
-
 `;
 
 const MovieTitleText = styled(Typo.Title.Title6B18)`
