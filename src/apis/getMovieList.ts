@@ -1,4 +1,4 @@
-import { AxiosError } from 'axios';
+import { isAxiosError } from 'axios';
 import serverAxios from './serverAxios';
 import { MovieListType } from '../types/home/types';
 
@@ -8,7 +8,7 @@ const getMovieList: () => Promise<MovieListType[]> = async () => {
 		const res = await serverAxios.get('/api/v1/movies');
 		return res.data.movies;
 	} catch (error) {
-		if (error instanceof AxiosError) {
+		if (isAxiosError(error)) {
 			const statusCode = error.response?.status;
 			let errorMessage = 'error occurred';
 			if (!statusCode) {
