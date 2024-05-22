@@ -1,20 +1,19 @@
 import styled from 'styled-components';
+import { useState } from 'react';
 import Typo from '../../../styles/typo/typo';
 import TimeToggleButton from './TimeToggleButton';
+import TimeList from './TimeList';
 
-interface TimeToggleSectionProps {
-	isOpenTimeList: boolean;
-	setOpenTimeList: (open: boolean) => void;
-}
-
-function TimeToggleSection({ isOpenTimeList, setOpenTimeList }: TimeToggleSectionProps) {
+function TimeToggleSection() {
+	const [isOpenTimeList, setOpenTimeList] = useState<boolean>(true);
 	return (
 		<TimeToggleSectionContainer>
 			<TimeToggleSectionWrapper>
 				<Typo.Title.Title2SB15>강남</Typo.Title.Title2SB15>
 				<Place>내 위치로부터 320m</Place>
+				<TimeToggleButton isOpenTimeList={isOpenTimeList} setOpenTimeList={setOpenTimeList} />
 			</TimeToggleSectionWrapper>
-			<TimeToggleButton isOpenTimeList={isOpenTimeList} setOpenTimeList={setOpenTimeList} />
+			<TimeListWrapper>{isOpenTimeList && <TimeList />}</TimeListWrapper>
 		</TimeToggleSectionContainer>
 	);
 }
@@ -22,7 +21,8 @@ export default TimeToggleSection;
 
 const TimeToggleSectionContainer = styled.div`
 	display: flex;
-	padding: 0.6rem 0;
+	flex-direction: column;
+	padding: 0.6rem 0 0;
 
 	background-color: ${({ theme }) => theme.GreyScale.Background};
 `;
@@ -37,6 +37,11 @@ const TimeToggleSectionWrapper = styled.div`
 	display: flex;
 	gap: 1rem;
 	align-items: center;
-	justify-content: center;
-	margin: 0 18rem 0 1rem;
+	justify-content: flex-start;
+	padding-bottom: 0.4rem;
+	padding-left: 1rem;
+`;
+
+const TimeListWrapper = styled.div`
+	background-color: ${({ theme }) => theme.GreyScale.White};
 `;

@@ -7,7 +7,6 @@ interface TimeToggleButtonProps {
 }
 
 function TimeToggleButton({ isOpenTimeList, setOpenTimeList }: TimeToggleButtonProps) {
-	console.log(isOpenTimeList);
 	return (
 		<TimeToggleButtonWrapper
 			type="button"
@@ -20,9 +19,11 @@ function TimeToggleButton({ isOpenTimeList, setOpenTimeList }: TimeToggleButtonP
 }
 
 const TimeToggleButtonWrapper = styled.button<{ $isOpenTimeList: boolean }>`
+	position: relative;
+	left: 17.5rem;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-end;
 	width: 2.8rem;
 	height: 2.8rem;
 
