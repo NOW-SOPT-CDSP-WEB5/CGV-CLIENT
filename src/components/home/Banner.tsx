@@ -8,12 +8,14 @@ import homeBannerData from '../../constants/home/homeBannerData';
 function Banner() {
 	const [bannerImgData, setBannerImgData] = useState<HomeBannerAdType[]>(homeBannerData);
 	const [current, setCurrent] = useState(0);
-	const bannerLen = bannerImgData.length;
+	const bannerLen = bannerImgData?.length || 0;
 	const bannerRef = useRef<HTMLDivElement>(null);
 
 	const loadBannerData = async () => {
 		const res = await getAds();
-		setBannerImgData(res);
+		if (res) {
+			setBannerImgData(res);
+		}
 	};
 	useEffect(() => {
 		loadBannerData();
@@ -45,9 +47,7 @@ function Banner() {
 	return (
 		<BannerContainer>
 			<BannerWrapper ref={bannerRef}>
-				{bannerImgData.map((banner) => (
-					<BannerImg key={banner.id} src={banner.url} alt={`${banner.id}bannerAd`} />
-				))}
+				{bannerImgData?.map((banner) => <BannerImg key={banner.id} src={banner.url} alt={`${banner.id}bannerAd`} />)}
 			</BannerWrapper>
 			<BannerIdxTxt>
 				<Typo.Caption.Caption2R11>
