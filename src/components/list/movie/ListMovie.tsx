@@ -1,37 +1,15 @@
 import styled from 'styled-components';
 import Typo from '../../../styles/typo/typo';
-import listIcons from '../../../assets/list/icons';
 import MovieDesc from './MovieDesc';
 import MovieTypeTag from './MovieTypeTag';
 import { MovieListType } from '../../../types/home/types';
+import getAgeIconSrc from '../../../utils/common/getAgeIconSrc';
 
 function ListMovie({
 	movie: { id, name, reservationRate, releaseDate, filmRatings, imageUrl, genres, theaterType },
 }: {
 	movie: MovieListType;
 }) {
-	const getAgeIconSrc = (age: string) => {
-		let ageIcon;
-		switch (age) {
-			case '12':
-				ageIcon = listIcons.movie.icListAge12;
-				break;
-			case '15':
-				ageIcon = listIcons.movie.icListAge15;
-				break;
-			case '18':
-				ageIcon = listIcons.movie.icListAge18;
-				break;
-			case 'All':
-				ageIcon = listIcons.movie.icListAgeAll;
-				break;
-			default:
-				ageIcon = listIcons.movie.icListAgeAll;
-				break;
-		}
-		return ageIcon;
-	};
-
 	return (
 		<MovieLayout>
 			<MovieContainer>
