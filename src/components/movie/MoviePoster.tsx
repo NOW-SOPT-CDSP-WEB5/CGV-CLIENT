@@ -1,16 +1,31 @@
 import styled from 'styled-components';
+import { useState, useEffect } from 'react';
 import MovieIcons from '../../assets/movie/icon';
 import MoviePosterImgEx from '../../assets/movie/images/img_movie_bg.svg'; // 예시 파일입니다.
 import Typo from '../../styles/typo/typo';
+import getDetail from '../../apis/getDetail';
 
 function MoviePoster() {
+	const [title, setTitle] = useState<string>('');
+
+	const loadTitleData = async (movieId: number) => {
+		const res = await getDetail(movieId);
+		if (res) {
+			setTitle(res.title);
+		}
+	};
+
+	useEffect(() => {
+		loadTitleData(3);
+	}, []);
+
 	return (
 		<MoviePosterContainer>
-			<MoviePosterImg src={MoviePosterImgEx} alt="범죄도시4" />
+			<MoviePosterImg src={MoviePosterImgEx} alt={title} />
 			<GradientOverlay />
 			<MoviePlayingIcon src={MovieIcons.moviePoster.icMoviePlaying} alt="playing" />
 			<MoviePosterTextWapper>
-				<MovieTitleText>범죄도시4</MovieTitleText>
+				<MovieTitleText>{title}</MovieTitleText>
 				<MovieSubTitleText>THE ROUNDUP: PUNISHMENT</MovieSubTitleText>
 				<MovieInfoText>
 					2024.04.24 개봉 <MovieInfoSpanText>|</MovieInfoSpanText> 1시간 49분 <MovieInfoSpanText>|</MovieInfoSpanText>{' '}
