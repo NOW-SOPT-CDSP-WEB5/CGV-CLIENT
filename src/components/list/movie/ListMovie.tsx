@@ -1,29 +1,32 @@
 import styled from 'styled-components';
-import listImages from '../../../assets/list/images';
 import Typo from '../../../styles/typo/typo';
 import listIcons from '../../../assets/list/icons';
 import MovieDesc from './MovieDesc';
 import MovieTypeTag from './MovieTypeTag';
+import { MovieListType } from '../../../types/home/types';
 
-function ListMovie() {
+function ListMovie({
+	movie: { id, name, reservationRate, releaseDate, filmRatings, imageUrl, genres, theaterType },
+}: {
+	movie: MovieListType;
+}) {
 	return (
 		<MovieLayout>
 			<MovieContainer>
 				<MovieBox>
-					<MovieImg src={listImages.movie.poster1} alt="movie" />
-
+					<MovieImg src={imageUrl} alt={name + id} />
 					<MovieContentWrapper>
 						<MovieDescContainer>
 							<MovieTitleWrapper>
-								<Typo.Title.Title10B19>범죄도시</Typo.Title.Title10B19>
-								<AgeImg src={listIcons.movie.icListAge} alt="age15" />
+								<Typo.Title.Title10B19>{name}</Typo.Title.Title10B19>
+								<AgeImg src={listIcons.movie.icListAge} alt={filmRatings} />
 							</MovieTitleWrapper>
 
-							<RedBody5M13>액션 | 범죄</RedBody5M13>
-							<MovieDesc p1="개봉일" p2="2024.04.24" />
-							<MovieDesc p1="예매율" p2="91.4%" />
+							<RedBody5M13>{genres}</RedBody5M13>
+							<MovieDesc p1="개봉일" p2={releaseDate} />
+							<MovieDesc p1="예매율" p2={String(reservationRate).concat('%')} />
 						</MovieDescContainer>
-						<MovieTypeTag />
+						<MovieTypeTag theaterType={theaterType} />
 					</MovieContentWrapper>
 				</MovieBox>
 				<BookNowBtn type="button">
@@ -42,6 +45,7 @@ const MovieLayout = styled.div`
 	padding: 1.2rem;
 `;
 const MovieContainer = styled.div`
+	position: relative;
 	display: flex;
 	align-items: end;
 	justify-content: space-between;
@@ -80,6 +84,8 @@ const MovieDescContainer = styled.div`
 `;
 
 const BookNowBtn = styled.button`
+	position: absolute;
+	right: 0;
 	width: fit-content;
 	height: fit-content;
 	padding: 0.7rem 0.8rem;
