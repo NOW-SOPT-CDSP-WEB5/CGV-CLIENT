@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import FadeLoader from 'react-spinners/FadeLoader';
-import { Suspense, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import listImages from '../assets/list/images';
 import MainTopBar from '../components/common/MainTopBar';
 import ListControlBar from '../components/list/ListControlBar';
@@ -12,9 +12,12 @@ import { MovieListType } from '../types/home/types';
 
 function List() {
 	const [movieList, setMovieList] = useState<MovieListType[]>([]);
+	const [loading, setLoading] = useState<boolean>(true);
 	const handleGetMovieList = async () => {
+		setLoading(true);
 		const res = await getMovieList();
 		setMovieList(res);
+		setLoading(false);
 	};
 	useEffect(() => {
 		handleGetMovieList();
@@ -25,11 +28,11 @@ function List() {
 			<MainTopBar location="list" />
 			<ListControlBar />
 			<ListMovieContainer>
-				<Suspense fallback={<FadeLoader color="grey" loading aria-label="Loading Spinner" data-testid="loader" />}>
-					{movieList.map((movie) => (
-						<ListMovie key={movie.name} movie={movie} />
-					))}
-				</Suspense>
+				{loading ? (
+					<FadeLoader color="grey" loading aria-label="Loading Spinner" data-testid="loader" />
+				) : (
+					movieList.map((movie) => <ListMovie key={movie.name} movie={movie} />)
+				)}
 			</ListMovieContainer>
 			<Partition />
 			<Footer />
