@@ -48,6 +48,7 @@ const BookingModalWrpaper = styled.div`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	padding-top: 5rem;
 `;
 
 const BookingButton = styled.button`
@@ -79,8 +80,6 @@ const BookingTitle = styled(Typo.Head.Head1SB17)`
 `;
 
 const ButtonWrapper = styled.div`
-	position: fixed;
-	bottom: 30rem;
 	display: flex;
 `;
 
@@ -91,7 +90,7 @@ const Theater = styled(Typo.Title.Title3SB14)`
 `;
 
 const BookingMsg = styled(Typo.Caption.Caption2R11)`
-	padding: 1.5rem 0 4rem;
+	padding: 1.5rem 0 3rem;
 
 	color: ${({ theme }) => theme.GreyScale.MG};
 `;
