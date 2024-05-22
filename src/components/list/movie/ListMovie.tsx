@@ -10,6 +10,29 @@ function ListMovie({
 }: {
 	movie: MovieListType;
 }) {
+	const getAgeIconSrc = (age: string) => {
+		let ageIcon;
+		switch (age) {
+			case '12':
+				ageIcon = listIcons.movie.icListAge12;
+				break;
+			case '15':
+				ageIcon = listIcons.movie.icListAge15;
+				break;
+			case '18':
+				// 이미지 추가 필요
+				ageIcon = listIcons.movie.icListAge15;
+				break;
+			case 'All':
+				ageIcon = listIcons.movie.icListAgeAll;
+				break;
+			default:
+				ageIcon = listIcons.movie.icListAgeAll;
+				break;
+		}
+		return ageIcon;
+	};
+
 	return (
 		<MovieLayout>
 			<MovieContainer>
@@ -19,7 +42,7 @@ function ListMovie({
 						<MovieDescContainer>
 							<MovieTitleWrapper>
 								<Typo.Title.Title10B19>{name}</Typo.Title.Title10B19>
-								<AgeImg src={listIcons.movie.icListAge} alt={filmRatings} />
+								<AgeImg src={getAgeIconSrc(filmRatings)} alt={filmRatings} />
 							</MovieTitleWrapper>
 
 							<RedBody5M13>{genres}</RedBody5M13>
@@ -39,6 +62,7 @@ function ListMovie({
 }
 
 const MovieLayout = styled.div`
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	height: 16rem;
@@ -80,7 +104,7 @@ const RedBody5M13 = styled(Typo.Body.Body5M13)`
 const MovieDescContainer = styled.div`
 	display: flex;
 	flex-direction: column;
-	gap: 0.4rem;
+	gap: 0.6rem;
 `;
 
 const BookNowBtn = styled.button`
@@ -97,6 +121,8 @@ const BookNowBtn = styled.button`
 	border-radius: 3px;
 `;
 const MovieLine = styled.div`
+	position: absolute;
+	bottom: 0;
 	width: 35.6rem;
 	height: 1px;
 
