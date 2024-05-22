@@ -40,7 +40,7 @@ function BottomBar() {
 				<img src={movieIcons.BottomBar.icBtnShare} alt="btn-share" />
 			</BottomBarBtn>
 
-			<TicketBtn type="button">
+			<TicketBtn type="button" ticket={ticket}>
 				<TicketText>{ticket ? '예매된 영화' : '지금 예매하기'}</TicketText>
 			</TicketBtn>
 		</BottomBarWapper>
@@ -63,10 +63,14 @@ const BottomBarBtn = styled.button`
 	border: none;
 `;
 
-const TicketBtn = styled.button`
+interface TicketBtnProps {
+	ticket: boolean;
+}
+
+const TicketBtn = styled.button<TicketBtnProps>`
 	width: 25.5rem;
 
-	background-color: ${({ theme }) => theme.Color.Point};
+	background-color: ${({ theme, ticket }) => (ticket ? theme.Color.Point : theme.GreyScale.MG)};
 	border: none;
 `;
 
