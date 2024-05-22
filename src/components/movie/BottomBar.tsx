@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import movieIcons from '../../assets/movie/icon';
 import Typo from '../../styles/typo/typo';
 import getDetail from '../../apis/getDetail';
+import postHearts from '../../apis/postHearts';
 
 function BottomBar() {
 	const [like, setLike] = useState<boolean>(false);
@@ -27,9 +28,16 @@ function BottomBar() {
 		loadTicketData(3);
 	}, [like, ticket]);
 
+	const handleHeartBtn = async (movieId: number) => {
+		const res = await postHearts(movieId);
+		if (res) {
+			setLike(true);
+		}
+	};
+
 	return (
 		<BottomBarWapper>
-			<BottomBarBtn type="button">
+			<BottomBarBtn type="button" onClick={() => handleHeartBtn(3)}>
 				<img
 					src={like ? movieIcons.BottomBar.icBtnHeartActivate : movieIcons.BottomBar.icBtnHeartDisabled}
 					alt="like"
