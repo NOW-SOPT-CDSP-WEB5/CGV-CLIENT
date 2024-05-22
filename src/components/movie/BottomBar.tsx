@@ -70,7 +70,7 @@ interface TicketBtnProps {
 const TicketBtn = styled.button<TicketBtnProps>`
 	width: 25.5rem;
 
-	background-color: ${({ theme, ticket }) => (ticket ? theme.Color.Point : theme.GreyScale.MG)};
+	background-color: ${({ theme, ticket }) => (ticket ? theme.GreyScale.MG : theme.Color.Point)};
 	border: none;
 `;
 
