@@ -1,44 +1,40 @@
-import { useState, PropsWithChildren } from 'react';
+import { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import Modal from '../../common/modal/Modal';
 import Typo from '../../../styles/typo/typo';
-import BookingConfirmModal from './BookingConfirmModal';
+import postMoviesTickets from '../../../apis/postMoviesTickets';
 
 interface BookingModalProps {
 	onClickToggleModal: () => void;
+	onConfirmBooking: () => void;
 }
 
 /** 예매 모달 내용 */
-function BookingModal({ onClickToggleModal, children }: PropsWithChildren<BookingModalProps>) {
-	const [isBookingConfirmed, setBookingConfirmed] = useState(false);
+function BookingModal({ onClickToggleModal, onConfirmBooking, children }: PropsWithChildren<BookingModalProps>) {
+	const handleBookingClick = async () => {
+		const res = await postMoviesTickets();
+		console.log(res);
 
-	const handleBookingClick = () => {
-		setBookingConfirmed(true);
+		onConfirmBooking(); // 예매 확인 모달 표시
 	};
 
 	return (
 		<Modal onClickToggleModal={onClickToggleModal}>
-			{isBookingConfirmed ? (
-				<BookingConfirmModal />
-			) : (
-				<>
-					<BookingModalWrpaper>
-						<BookingTitle>범죄도시4</BookingTitle>
-						<Theater>강남 CGV 1관 6층</Theater>
-						<Typo.Title.Title6B18>07:40 ~ 09:39</Typo.Title.Title6B18>
-						<BookingMsg>영화 정보와 극장, 상영관과 영화 시간을 확인해주세요</BookingMsg>
-						{children}
-					</BookingModalWrpaper>
-					<ButtonWrapper>
-						<CloseButton type="button" onClick={onClickToggleModal}>
-							<Typo.Head.Head1SB17>취소</Typo.Head.Head1SB17>
-						</CloseButton>
-						<BookingButton type="button" onClick={handleBookingClick}>
-							<Typo.Head.Head1SB17>예매하기</Typo.Head.Head1SB17>
-						</BookingButton>
-					</ButtonWrapper>
-				</>
-			)}
+			<BookingModalWrpaper>
+				<BookingTitle>범죄도시4</BookingTitle>
+				<Theater>강남 CGV 1관 6층</Theater>
+				<Typo.Title.Title6B18>07:40 ~ 09:39</Typo.Title.Title6B18>
+				<BookingMsg>영화 정보와 극장, 상영관과 영화 시간을 확인해주세요</BookingMsg>
+				{children}
+			</BookingModalWrpaper>
+			<ButtonWrapper>
+				<CloseButton type="button" onClick={onClickToggleModal}>
+					<Typo.Head.Head1SB17>취소</Typo.Head.Head1SB17>
+				</CloseButton>
+				<BookingButton type="button" onClick={handleBookingClick}>
+					<Typo.Head.Head1SB17>예매하기</Typo.Head.Head1SB17>
+				</BookingButton>
+			</ButtonWrapper>
 		</Modal>
 	);
 }

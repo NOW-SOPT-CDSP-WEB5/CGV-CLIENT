@@ -1,20 +1,27 @@
 import styled from 'styled-components';
 import timeImages from '../../../assets/time/images';
 import Typo from '../../../styles/typo/typo';
+import Modal from '../../common/modal/Modal';
+
+interface BookingConfirmModalProps {
+	onClickToggleModal: () => void;
+}
 
 /** 예매 확인 모달 */
-function BookingConfirmModal() {
+function BookingConfirmModal({ onClickToggleModal }: BookingConfirmModalProps) {
 	return (
-		<ConfirmDialogBox>
-			<BookingConfirmImg
-				src={timeImages.timeModal.imgTimemodalComplete}
-				alt="예매 완료 확인 모달"
-				height={139}
-				width={166}
-			/>
-			<BookingConfirmMsg>예매 완료되었습니다</BookingConfirmMsg>
-			<GoAllMovieList>전체 상영작 확인하기</GoAllMovieList>
-		</ConfirmDialogBox>
+		<Modal onClickToggleModal={onClickToggleModal}>
+			<ConfirmDialogBox>
+				<BookingConfirmImg
+					src={timeImages.timeModal.imgTimemodalComplete}
+					alt="예매 완료 확인 모달"
+					height={139}
+					width={166}
+				/>
+				<BookingConfirmMsg>예매 완료되었습니다</BookingConfirmMsg>
+				<GoAllMovieList>전체 상영작 확인하기</GoAllMovieList>
+			</ConfirmDialogBox>
+		</Modal>
 	);
 }
 
