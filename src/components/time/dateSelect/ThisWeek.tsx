@@ -110,7 +110,7 @@ const SortBar = styled.div`
 	color: ${({ color, theme }) => color || theme.GreyScale.MG};
 
 	:first-child {
-		color: ${({ color, theme }) => color || theme.GreyScale.BG};
+		color: ${({ theme }) => theme.GreyScale.BG};
 	}
 
 	:last-child {
