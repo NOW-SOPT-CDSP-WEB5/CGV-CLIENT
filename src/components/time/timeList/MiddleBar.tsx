@@ -12,7 +12,7 @@ function MiddleBar() {
 				<MovieInfoWrapper>
 					<Poster src={timeImages.imgTimePosterMini} alt="범죄도시 포스터" />
 					<Typo.Head.Head1SB17>범죄도시4</Typo.Head.Head1SB17>
-					<img src={listIcons.movie.icListAge} alt="15세 관람가" width={20} height={20} />
+					<img src={listIcons.movie.icListAge15} alt="15세 관람가" width={20} height={20} />
 				</MovieInfoWrapper>
 				<img src={timeButtons.BtnTimeMovieinfo} alt="영화정보" />
 			</MiddleBarContainer>
@@ -39,7 +39,7 @@ const Gap = styled.div`
 	width: 37.5rem;
 	height: 0.7rem;
 
-	background-color: ${({ theme }) => theme.GreyScale.LG2};
+	background-color: ${({ theme }) => theme.GreyScale.Background};
 `;
 
 const Poster = styled.img`
