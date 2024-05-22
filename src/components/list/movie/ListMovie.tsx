@@ -1,29 +1,54 @@
 import styled from 'styled-components';
-import listImages from '../../../assets/list/images';
 import Typo from '../../../styles/typo/typo';
 import listIcons from '../../../assets/list/icons';
 import MovieDesc from './MovieDesc';
 import MovieTypeTag from './MovieTypeTag';
+import { MovieListType } from '../../../types/home/types';
 
-function ListMovie() {
+function ListMovie({
+	movie: { id, name, reservationRate, releaseDate, filmRatings, imageUrl, genres, theaterType },
+}: {
+	movie: MovieListType;
+}) {
+	const getAgeIconSrc = (age: string) => {
+		let ageIcon;
+		switch (age) {
+			case '12':
+				ageIcon = listIcons.movie.icListAge12;
+				break;
+			case '15':
+				ageIcon = listIcons.movie.icListAge15;
+				break;
+			case '18':
+				ageIcon = listIcons.movie.icListAge18;
+				break;
+			case 'All':
+				ageIcon = listIcons.movie.icListAgeAll;
+				break;
+			default:
+				ageIcon = listIcons.movie.icListAgeAll;
+				break;
+		}
+		return ageIcon;
+	};
+
 	return (
 		<MovieLayout>
 			<MovieContainer>
 				<MovieBox>
-					<MovieImg src={listImages.movie.poster1} alt="movie" />
-
+					<MovieImg src={imageUrl} alt={name + id} />
 					<MovieContentWrapper>
 						<MovieDescContainer>
 							<MovieTitleWrapper>
-								<Typo.Title.Title10B19>범죄도시</Typo.Title.Title10B19>
-								<AgeImg src={listIcons.movie.icListAge} alt="age15" />
+								<Typo.Title.Title10B19>{name}</Typo.Title.Title10B19>
+								<AgeImg src={getAgeIconSrc(filmRatings)} alt={filmRatings} />
 							</MovieTitleWrapper>
 
-							<RedBody5M13>액션 | 범죄</RedBody5M13>
-							<MovieDesc p1="개봉일" p2="2024.04.24" />
-							<MovieDesc p1="예매율" p2="91.4%" />
+							<RedBody5M13>{genres}</RedBody5M13>
+							<MovieDesc p1="개봉일" p2={releaseDate} />
+							<MovieDesc p1="예매율" p2={String(reservationRate).concat('%')} />
 						</MovieDescContainer>
-						<MovieTypeTag />
+						<MovieTypeTag theaterType={theaterType} />
 					</MovieContentWrapper>
 				</MovieBox>
 				<BookNowBtn type="button">
@@ -36,12 +61,14 @@ function ListMovie() {
 }
 
 const MovieLayout = styled.div`
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	height: 16rem;
 	padding: 1.2rem;
 `;
 const MovieContainer = styled.div`
+	position: relative;
 	display: flex;
 	align-items: end;
 	justify-content: space-between;
@@ -76,10 +103,12 @@ const RedBody5M13 = styled(Typo.Body.Body5M13)`
 const MovieDescContainer = styled.div`
 	display: flex;
 	flex-direction: column;
-	gap: 0.4rem;
+	gap: 0.6rem;
 `;
 
 const BookNowBtn = styled.button`
+	position: absolute;
+	right: 0;
 	width: fit-content;
 	height: fit-content;
 	padding: 0.7rem 0.8rem;
@@ -91,6 +120,8 @@ const BookNowBtn = styled.button`
 	border-radius: 3px;
 `;
 const MovieLine = styled.div`
+	position: absolute;
+	bottom: 0;
 	width: 35.6rem;
 	height: 1px;
 
