@@ -1,21 +1,51 @@
 import styled from 'styled-components';
+import { useEffect, useState } from 'react';
 import Typo from '../../../styles/typo/typo';
 import EachTheatersTimeList from './EachTheatersTimeList';
 import timeIcons from '../../../assets/time/icon';
+import getTheaters from '../../../apis/getTheaters';
+
+// 데이터 타입 선언
+interface Theater {
+	theaterId: number;
+	theaterName: string;
+	maxSeats: number;
+	theaterType: string;
+}
 
 /** 각 상영관 정보 섹션 */
 function EachTheatersTimeSection() {
+	const [theaters, setTheaters] = useState<Theater[]>([]);
+
+	const movieId = 3;
+	const cinemaId = 28;
+
+	// 영화관, 상영관 정보 가져오는 api 통신
+	const getTheaterApi = async () => {
+		const res = await getTheaters(movieId, cinemaId);
+		const theaterInfo = res.movies[0].cinemas[0].theaters;
+		setTheaters(theaterInfo);
+	};
+
+	useEffect(() => {
+		getTheaterApi();
+	}, []);
 	return (
 		<SectionContainer>
-			<TheaterInfoContainer>
-				<Typo.Title.Title8B15>2D</Typo.Title.Title8B15>
-				<TheaterInfoWrapper>
-					<TheaterInfo>1관 6층</TheaterInfo>
-					<img src={timeIcons.icTimeLine} alt="|" width={12} height={12} />
-					<TheaterInfo>총 158석</TheaterInfo>
-				</TheaterInfoWrapper>
-			</TheaterInfoContainer>
-			<EachTheatersTimeList />
+			{theaters.map((theater) => (
+				<div key={theater.theaterId}>
+					<TheaterInfoContainer>
+						<Typo.Title.Title8B15>{theater.theaterType}</Typo.Title.Title8B15>
+						<TheaterInfoWrapper>
+							<TheaterInfo>{theater.theaterName}</TheaterInfo>
+							<img src={timeIcons.icTimeLine} alt="|" width={12} height={12} />
+							<TheaterInfo>총 {theater.maxSeats}석</TheaterInfo>
+						</TheaterInfoWrapper>
+					</TheaterInfoContainer>
+
+					<EachTheatersTimeList />
+				</div>
+			))}
 		</SectionContainer>
 	);
 }
