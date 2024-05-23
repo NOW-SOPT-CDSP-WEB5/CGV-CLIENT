@@ -8,7 +8,7 @@ const theme = {
 	},
 	Grad: {
 		Key_Grad: 'linear-gradient(90deg, #F94455 0%, #F0642F 100%)',
-		Image_Grad: 'linear-gradient(180deg, rgba(4, 2, 3, 0.00) 0%, #040203 100%)',
+		Image_Grad: 'linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.50) 100%)',
 	},
 	GreyScale: {
 		White: '#FFFFFF',

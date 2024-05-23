@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 import Typo from '../../../styles/typo/typo';
+import { TimeType } from '../../../types/time/types';
 
-function RunningTime() {
+function RunningTime({ startAt, endAt }: TimeType) {
+	// hh:mm 형식으로 변환
+	const formatTime = (time: string) => time.slice(0, 5);
+
 	return (
 		<RunningTimeWrapper>
-			<Typo.Title.Title6B18>07:40</Typo.Title.Title6B18>
-			<EndTime>~09:39</EndTime>
+			<Typo.Title.Title6B18>{formatTime(startAt)}</Typo.Title.Title6B18>
+			<EndTime>~{formatTime(endAt)}</EndTime>
 		</RunningTimeWrapper>
 	);
 }

@@ -23,6 +23,7 @@ const ModalContainer = styled.div`
 	position: fixed;
 	top: 0;
 	left: 0;
+	z-index: 10;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -38,7 +39,7 @@ const DialogBox = styled.div`
 	justify-content: center;
 	box-sizing: border-box;
 	width: 29.4rem;
-	height: 22.6rem;
+	height: 19.6rem;
 
 	background-color: white;
 	box-shadow: 0 0 30px rgb(30 30 30 / 18.5%);
