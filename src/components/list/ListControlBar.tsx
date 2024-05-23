@@ -48,6 +48,7 @@ const SortBtn = styled.button<{ $focused?: boolean }>`
 
 	color: ${({ theme, $focused }) => ($focused ? theme.GreyScale.Black : theme.GreyScale.MG)};
 
+	background-color: ${({ theme }) => theme.GreyScale.Background};
 	border: none;
 `;
 const CheckBtn = styled(SortBtn)`
