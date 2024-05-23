@@ -52,6 +52,7 @@ const ListAdImg = styled.img`
 const ListMovieContainer = styled.section`
 	display: flex;
 	flex-direction: column;
+	width: 100%;
 `;
 
 const Partition = styled(PartitionBar)`
