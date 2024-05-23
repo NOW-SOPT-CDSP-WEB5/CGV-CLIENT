@@ -1,15 +1,18 @@
 import styled from 'styled-components';
 import RunningTimeSeatsWrapper from './RunningTimeSeatsWrapper';
+import { Time } from './EachTheatersTimeSection';
+
+interface EachTheatersTimeListProps {
+	times: Time[];
+}
 
 /** 각 상영관 시간&잔여석 정보 */
-function EachTheatersTimeList() {
+function EachTheatersTimeList({ times }: EachTheatersTimeListProps) {
 	return (
 		<RunningTimeSeatsContainer>
-			{/* TODO: 각 영화관 상영시간 개수만큼 보여주기 */}
-			<RunningTimeSeatsWrapper />
-			<RunningTimeSeatsWrapper />
-			<RunningTimeSeatsWrapper />
-			<RunningTimeSeatsWrapper />
+			{times.map((time) => (
+				<RunningTimeSeatsWrapper key={time.startAt} startAt={time.startAt} endAt={time.endAt} />
+			))}
 		</RunningTimeSeatsContainer>
 	);
 }

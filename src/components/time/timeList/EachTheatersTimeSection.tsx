@@ -6,11 +6,18 @@ import timeIcons from '../../../assets/time/icon';
 import getTheaters from '../../../apis/getTheaters';
 
 // 데이터 타입 선언
+export interface Time {
+	startAt: string;
+	endAt: string;
+	remainingSeats: number;
+}
+
 interface Theater {
 	theaterId: number;
 	theaterName: string;
 	maxSeats: number;
 	theaterType: string;
+	times: Time[];
 }
 
 /** 각 상영관 정보 섹션 */
@@ -43,7 +50,7 @@ function EachTheatersTimeSection() {
 						</TheaterInfoWrapper>
 					</TheaterInfoContainer>
 
-					<EachTheatersTimeList />
+					<EachTheatersTimeList times={theater.times} />
 				</div>
 			))}
 		</SectionContainer>

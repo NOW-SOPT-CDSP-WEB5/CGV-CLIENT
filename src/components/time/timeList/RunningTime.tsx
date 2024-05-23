@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 import Typo from '../../../styles/typo/typo';
 
-function RunningTime() {
+interface RunningTimeProps {
+	startAt: string;
+	endAt: string;
+}
+
+function RunningTime({ startAt, endAt }: RunningTimeProps) {
 	return (
 		<RunningTimeWrapper>
-			<Typo.Title.Title6B18>07:40</Typo.Title.Title6B18>
-			<EndTime>~09:39</EndTime>
+			<Typo.Title.Title6B18>{startAt}</Typo.Title.Title6B18>
+			<EndTime>~{endAt}</EndTime>
 		</RunningTimeWrapper>
 	);
 }

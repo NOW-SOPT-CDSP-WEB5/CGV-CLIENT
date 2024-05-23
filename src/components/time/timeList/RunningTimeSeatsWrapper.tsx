@@ -2,10 +2,15 @@ import styled from 'styled-components';
 import RunningTime from './RunningTime';
 import Seats from './Seats';
 
-function RunningTimeSeatsWrapper() {
+interface RunningTimeSeatsWrapperProps {
+	startAt: string;
+	endAt: string;
+}
+
+function RunningTimeSeatsWrapper({ startAt, endAt }: RunningTimeSeatsWrapperProps) {
 	return (
 		<TimeSeatsWrapper>
-			<RunningTime />
+			<RunningTime startAt={startAt} endAt={endAt} />
 			<Seats />
 		</TimeSeatsWrapper>
 	);
