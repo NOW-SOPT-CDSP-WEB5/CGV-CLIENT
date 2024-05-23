@@ -8,23 +8,16 @@ function BottomBar() {
 	const [like, setLike] = useState<boolean>(false);
 	const [ticket, setTicket] = useState<boolean>(false);
 
-	const loadLikeData = async (movieId: number) => {
+	const loadData = async (movieId: number) => {
 		const res = await getDetail(movieId);
 		if (res) {
 			setLike(res.isLiked);
-		}
-	};
-
-	const loadTicketData = async (movieId: number) => {
-		const res = await getDetail(movieId);
-		if (res) {
 			setTicket(res.isTicketed);
 		}
 	};
 
 	useEffect(() => {
-		loadLikeData(3);
-		loadTicketData(3);
+		loadData(3);
 	}, [like, ticket]);
 
 	return (
@@ -40,7 +33,7 @@ function BottomBar() {
 				<img src={movieIcons.BottomBar.icBtnShare} alt="btn-share" />
 			</BottomBarBtn>
 
-			<TicketBtn type="button" ticket={ticket}>
+			<TicketBtn type="button" $ticket={ticket}>
 				<TicketText>{ticket ? '예매된 영화' : '지금 예매하기'}</TicketText>
 			</TicketBtn>
 		</BottomBarWapper>
@@ -64,13 +57,13 @@ const BottomBarBtn = styled.button`
 `;
 
 interface TicketBtnProps {
-	ticket: boolean;
+	$ticket: boolean;
 }
 
 const TicketBtn = styled.button<TicketBtnProps>`
 	width: 25.5rem;
 
-	background-color: ${({ theme, ticket }) => (ticket ? theme.GreyScale.MG : theme.Color.Point)};
+	background-color: ${({ theme, $ticket }) => ($ticket ? theme.GreyScale.MG : theme.Color.Point)};
 	border: none;
 `;
 
