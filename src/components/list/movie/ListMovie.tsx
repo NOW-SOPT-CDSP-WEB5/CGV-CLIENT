@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 import Typo from '../../../styles/typo/typo';
 import MovieDesc from './MovieDesc';
 import MovieTypeTag from './MovieTypeTag';
@@ -10,9 +11,13 @@ function ListMovie({
 }: {
 	movie: MovieListType;
 }) {
+	const navigation = useNavigate();
+	const navigateMovie = () => {
+		navigation('/movie');
+	};
 	return (
 		<MovieLayout>
-			<MovieContainer>
+			<MovieContainer onClick={navigateMovie}>
 				<MovieBox>
 					<MovieImg src={imageUrl} alt={name + id} />
 					<MovieContentWrapper>
