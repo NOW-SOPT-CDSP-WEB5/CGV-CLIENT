@@ -14,6 +14,7 @@ function MovieCard({
 	return (
 		<MovieBox>
 			<MovieImgContainer>
+				<MovieImgShade />
 				<MovieImg src={imageUrl} alt={name} />
 				<MovieImgTxtWrapper>
 					<AgeImg src={getAgeIconSrc(filmRatings)} alt={filmRatings} />
@@ -52,6 +53,14 @@ const MovieImgContainer = styled.div`
 	width: 16rem;
 	height: 22rem;
 	margin-bottom: 1.1rem;
+`;
+const MovieImgShade = styled.div`
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+	background: ${({ theme }) => theme.Grad.Image_Grad};
+	border-radius: 10px;
 `;
 const MovieImg = styled.img`
 	width: 100%;
