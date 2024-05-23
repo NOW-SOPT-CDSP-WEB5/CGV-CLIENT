@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import Typo from '../../../styles/typo/typo';
+import { TimeType } from '../../../types/time/types';
 
-function Seats() {
+function Seats({ remainingSeats }: TimeType) {
 	return (
 		<SeatsWrapper>
 			<FirstLabel>잔여</FirstLabel>
-			<RemainSeatsNum>154</RemainSeatsNum>
+			<RemainSeatsNum>{remainingSeats}</RemainSeatsNum>
 			<Typo.Num.Number4Timesmall>석</Typo.Num.Number4Timesmall>
 		</SeatsWrapper>
 	);

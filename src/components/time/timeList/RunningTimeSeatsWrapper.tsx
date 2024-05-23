@@ -4,9 +4,10 @@ import RunningTime from './RunningTime';
 import Seats from './Seats';
 import BookingModal from '../modal/BookingModal';
 import BookingConfirmModal from '../modal/BookingConfirmModal';
+import { TimeType } from '../../../types/time/types';
 
 /** 영화 예매시간 칸 클릭 시 모달창 띄우기 */
-function RunningTimeSeatsWrapper() {
+function RunningTimeSeatsWrapper({ startAt, endAt, remainingSeats }: TimeType) {
 	const [isBookingModalOpen, setBookingModalOpen] = useState<boolean>(false);
 	const [isBookingConfirmOpen, setBookingConfirmOpen] = useState<boolean>(false);
 
@@ -26,8 +27,8 @@ function RunningTimeSeatsWrapper() {
 			)}
 			{isBookingConfirmOpen && <BookingConfirmModal onClickToggleModal={onClickToggleBookingConfirm} />}
 			<TimeSeatsWrapper onClick={onClickToggleBookingModal}>
-				<RunningTime />
-				<Seats />
+				<RunningTime startAt={startAt} endAt={endAt} remainingSeats={0} />
+			  <Seats remainingSeats={remainingSeats} startAt="" endAt="" />
 			</TimeSeatsWrapper>
 		</>
 	);
