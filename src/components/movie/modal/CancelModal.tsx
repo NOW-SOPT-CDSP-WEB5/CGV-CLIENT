@@ -1,4 +1,6 @@
 import { useState, PropsWithChildren } from 'react';
+import { useState, useEffect, PropsWithChildren } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Modal from '../../common/modal/Modal';
 import Typo from '../../../styles/typo/typo';
@@ -11,10 +13,24 @@ interface CancelModalProps {
 /** 예매취소 모달 내용 */
 function CancelModal({ onClickToggleModal, children }: PropsWithChildren<CancelModalProps>) {
 	const [isCancelConfirmed, setCancelConfirmed] = useState(false);
+	const navigate = useNavigate();
 
 	const handleCancelClick = () => {
 		setCancelConfirmed(true);
 	};
+
+	// 3초 모달 표시되고 닫기
+	useEffect(() => {
+		if (isCancelConfirmed) {
+			const timer = setTimeout(() => {
+				onClickToggleModal();
+				navigate('/movie');
+			}, 3000);
+
+			return () => clearTimeout(timer);
+		}
+		return undefined;
+	}, [isCancelConfirmed, onClickToggleModal, navigate]);
 
 	return (
 		<Modal onClickToggleModal={onClickToggleModal}>
