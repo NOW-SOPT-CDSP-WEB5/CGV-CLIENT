@@ -11,24 +11,27 @@ function Modal({ onClickToggleModal, children }: PropsWithChildren<ModalProps>) 
 		e.preventDefault();
 		onClickToggleModal();
 	};
+
 	return (
 		<ModalContainer>
-			<DialogBox>{children}</DialogBox>
 			<Backdrop onClick={handleBackdropClick} />
+			<DialogBox>{children}</DialogBox>
 		</ModalContainer>
 	);
 }
 
 const ModalContainer = styled.div`
 	position: fixed;
-	top: 0;
-	left: 0;
+	top: 50%;
+	left: 50%;
 	z-index: 10;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	width: 100%;
 	height: 100%;
+
+	transform: translate(-50%, -50%);
 `;
 
 const DialogBox = styled.div`
@@ -49,15 +52,14 @@ const DialogBox = styled.div`
 
 const Backdrop = styled.div`
 	position: fixed;
-	top: 0;
-	left: 0;
+	top: 50%;
+	left: 50%;
 	z-index: 9999;
-
-	/* TODO: 모바일 화면 크기 나오면 height 조절 */
-	width: 100%;
+	width: 37.5rem;
 	height: 100vh;
 
 	background-color: ${({ theme }) => theme.Transparent.Black75};
+	transform: translate(-50%, -50%);
 `;
 
 export default Modal;
