@@ -11,7 +11,12 @@ function EachTheatersTimeList({ times }: EachTheatersTimeListProps) {
 	return (
 		<RunningTimeSeatsContainer>
 			{times.map((time) => (
-				<RunningTimeSeatsWrapper key={time.startAt} startAt={time.startAt} endAt={time.endAt} />
+				<RunningTimeSeatsWrapper
+					key={time.startAt}
+					startAt={time.startAt}
+					endAt={time.endAt}
+					remainingSeats={time.remainingSeats}
+				/>
 			))}
 		</RunningTimeSeatsContainer>
 	);

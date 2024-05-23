@@ -5,13 +5,14 @@ import Seats from './Seats';
 interface RunningTimeSeatsWrapperProps {
 	startAt: string;
 	endAt: string;
+	remainingSeats: number;
 }
 
-function RunningTimeSeatsWrapper({ startAt, endAt }: RunningTimeSeatsWrapperProps) {
+function RunningTimeSeatsWrapper({ startAt, endAt, remainingSeats }: RunningTimeSeatsWrapperProps) {
 	return (
 		<TimeSeatsWrapper>
 			<RunningTime startAt={startAt} endAt={endAt} />
-			<Seats />
+			<Seats remainingSeats={remainingSeats} />
 		</TimeSeatsWrapper>
 	);
 }
