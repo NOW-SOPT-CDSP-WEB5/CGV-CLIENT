@@ -26,12 +26,14 @@ function TimeComparator() {
 const TimeComparatorContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
-	margin: 4rem 1.2rem 0;
+	padding: 8rem 1.2rem 0;
 `;
 
 const BackSemiCircleImg = styled.img`
 	position: absolute;
+	top: 4.4rem;
 	z-index: 0;
+	height: 10.3rem;
 `;
 
 const TheaterChangeIcon = styled.img`
