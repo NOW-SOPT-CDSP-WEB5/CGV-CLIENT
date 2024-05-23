@@ -1,13 +1,9 @@
 import styled from 'styled-components';
 import RunningTimeSeatsWrapper from './RunningTimeSeatsWrapper';
-import { Time } from './EachTheatersTimeSection';
-
-interface EachTheatersTimeListProps {
-	times: Time[];
-}
+import { TheaterType } from '../../../types/time/types';
 
 /** 각 상영관 시간&잔여석 정보 */
-function EachTheatersTimeList({ times }: EachTheatersTimeListProps) {
+function EachTheatersTimeList({ times }: TheaterType) {
 	return (
 		<RunningTimeSeatsContainer>
 			{times.map((time) => (

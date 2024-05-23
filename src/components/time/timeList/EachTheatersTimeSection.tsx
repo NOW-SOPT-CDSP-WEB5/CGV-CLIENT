@@ -4,25 +4,11 @@ import Typo from '../../../styles/typo/typo';
 import EachTheatersTimeList from './EachTheatersTimeList';
 import timeIcons from '../../../assets/time/icon';
 import getTheaters from '../../../apis/getTheaters';
-
-// 데이터 타입 선언
-export interface Time {
-	startAt: string;
-	endAt: string;
-	remainingSeats: number;
-}
-
-interface Theater {
-	theaterId: number;
-	theaterName: string;
-	maxSeats: number;
-	theaterType: string;
-	times: Time[];
-}
+import { TheaterType } from '../../../types/time/types';
 
 /** 각 상영관 정보 섹션 */
 function EachTheatersTimeSection() {
-	const [theaters, setTheaters] = useState<Theater[]>([]);
+	const [theaters, setTheaters] = useState<TheaterType[]>([]);
 
 	const movieId = 3;
 	const cinemaId = 28;
@@ -50,7 +36,7 @@ function EachTheatersTimeSection() {
 						</TheaterInfoWrapper>
 					</TheaterInfoContainer>
 
-					<EachTheatersTimeList times={theater.times} />
+					<EachTheatersTimeList times={theater.times} theaterId={0} theaterName="" maxSeats={0} theaterType="" />
 				</div>
 			))}
 		</SectionContainer>

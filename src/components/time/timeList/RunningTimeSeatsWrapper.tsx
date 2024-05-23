@@ -1,18 +1,13 @@
 import styled from 'styled-components';
 import RunningTime from './RunningTime';
 import Seats from './Seats';
+import { TimeType } from '../../../types/time/types';
 
-interface RunningTimeSeatsWrapperProps {
-	startAt: string;
-	endAt: string;
-	remainingSeats: number;
-}
-
-function RunningTimeSeatsWrapper({ startAt, endAt, remainingSeats }: RunningTimeSeatsWrapperProps) {
+function RunningTimeSeatsWrapper({ startAt, endAt, remainingSeats }: TimeType) {
 	return (
 		<TimeSeatsWrapper>
-			<RunningTime startAt={startAt} endAt={endAt} />
-			<Seats remainingSeats={remainingSeats} />
+			<RunningTime startAt={startAt} endAt={endAt} remainingSeats={0} />
+			<Seats remainingSeats={remainingSeats} startAt="" endAt="" />
 		</TimeSeatsWrapper>
 	);
 }

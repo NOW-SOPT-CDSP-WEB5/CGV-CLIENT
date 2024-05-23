@@ -1,11 +1,8 @@
 import styled from 'styled-components';
 import Typo from '../../../styles/typo/typo';
+import { TimeType } from '../../../types/time/types';
 
-interface SeatsProps {
-	remainingSeats: number;
-}
-
-function Seats({ remainingSeats }: SeatsProps) {
+function Seats({ remainingSeats }: TimeType) {
 	return (
 		<SeatsWrapper>
 			<FirstLabel>잔여</FirstLabel>
