@@ -13,7 +13,7 @@ function ListMovie({
 }) {
 	const navigation = useNavigate();
 	const navigateMovie = () => {
-		navigation('/movie');
+		navigation('/movie/3');
 	};
 	return (
 		<MovieLayout>
