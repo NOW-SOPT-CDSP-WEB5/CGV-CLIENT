@@ -10,7 +10,7 @@ function Router() {
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/list" element={<List />} />
-				<Route path="/movie" element={<Movie />} />
+				<Route path="/movie/:id" element={<Movie />} />
 				<Route path="/time" element={<Time />} />
 			</Routes>
 		</BrowserRouter>
