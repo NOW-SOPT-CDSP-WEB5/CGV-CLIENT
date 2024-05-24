@@ -20,13 +20,12 @@ function BottomBar() {
 		if (res) {
 			setLike(res.isLiked);
 			setTicket(res.isticketed);
-			// setTicket(true);
 			console.log(res);
 		}
 	};
 
 	useEffect(() => {
-		loadData(17);
+		loadData(3);
 	}, [like, ticket]);
 
 	const handleHeartBtn = async (movieId: number) => {

@@ -23,7 +23,7 @@ function CancelModal({ onClickToggleModal, children }: PropsWithChildren<CancelM
 		if (isCancelConfirmed) {
 			const timer = setTimeout(() => {
 				onClickToggleModal();
-				navigate('/movie');
+				navigate('/movie/3');
 			}, 3000);
 
 			return () => clearTimeout(timer);
