@@ -1,15 +1,15 @@
-import { isAxiosError } from 'axios';
+import { AxiosError } from 'axios';
 import serverAxios from './serverAxios';
 
-// 영화 예매 API 함수
-const postMoviesTickets = async () => {
+const DeleteMovieTickets = async(movieId: number) => {
 	try {
-		const response = await serverAxios.post('/api/v1/movies/3/tickets', { theaterId: 17 });
-		return response;
+		const res = await serverAxios.delete(`/api/v1/movies/${movieId}/tickets`);
+		return res;
 	} catch (error) {
-		if (isAxiosError(error)) {
+		if (error instanceof AxiosError) {
 			const statusCode = error.response?.status;
 			let errorMessage = 'error occurred';
+
 			if (!statusCode) {
 				errorMessage = 'Network error';
 			} else if (statusCode >= 500) {
@@ -22,6 +22,6 @@ const postMoviesTickets = async () => {
 			throw new Error('unknown error');
 		}
 	}
-};
+}
 
-export default postMoviesTickets;
+export default DeleteMovieTickets;
