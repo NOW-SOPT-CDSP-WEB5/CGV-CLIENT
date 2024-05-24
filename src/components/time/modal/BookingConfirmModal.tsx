@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import styled from 'styled-components';
 import timeImages from '../../../assets/time/images';
 import Typo from '../../../styles/typo/typo';
@@ -9,6 +10,15 @@ interface BookingConfirmModalProps {
 
 /** 예매 확인 모달 */
 function BookingConfirmModal({ onClickToggleModal }: BookingConfirmModalProps) {
+	// 3초 표시되고 닫기
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			onClickToggleModal();
+		}, 3000);
+
+		return () => clearTimeout(timer);
+	}, [onClickToggleModal]);
+
 	return (
 		<Modal onClickToggleModal={onClickToggleModal}>
 			<ConfirmDialogBox>
@@ -48,10 +58,12 @@ const BookingConfirmMsg = styled(Typo.Head.Head1SB17)`
 	bottom: 1rem;
 	margin: 1rem 0;
 `;
+
 const BookingConfirmImg = styled.img`
 	width: 17.8rem;
 	height: 16.3rem;
 `;
+
 const GoAllMovieList = styled(Typo.Body.Body2R12)`
 	position: relative;
 	bottom: 1.4rem;
