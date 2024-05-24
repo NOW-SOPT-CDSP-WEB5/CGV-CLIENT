@@ -19,7 +19,6 @@ function BottomBar() {
 		if (res) {
 			setLike(res.isLiked);
 			setTicket(res.isticketed);
-			console.log(res);
 		}
 	};
 
