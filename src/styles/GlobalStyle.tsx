@@ -64,6 +64,7 @@ table {
 /* body 영역 설정 */
 body {
     width: 375px; /* 모바일 가로 사이즈 375 고정 */
+	min-height: 100%;
     margin: 0 auto; /* 중앙 정렬 */
     overflow-x: hidden; /* 가로 스크롤 방지 */
 

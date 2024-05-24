@@ -6,8 +6,6 @@ function TimeList() {
 		<>
 			<EachTheatersTimeSection />
 			<EachTheatersTimeSection />
-			<EachTheatersTimeSection />
-			<EachTheatersTimeSection />
 		</>
 	);
 }
