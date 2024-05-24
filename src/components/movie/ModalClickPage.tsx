@@ -10,9 +10,14 @@ function ModalClickPage() {
 		setOpenModal(!isOpenModal);
 	}, [isOpenModal]);
 
+	const setTicket = useCallback((value: boolean) => {
+        // setTicket 로직 작성
+        console.log('Ticket is set to:', value);
+    }, []);
+
 	return (
 		<Main>
-			{isOpenModal && <CancelModal onClickToggleModal={onClickToggleModal} />}
+			{isOpenModal && <CancelModal onClickToggleModal={onClickToggleModal} setTicket={setTicket}/>}
 			<DialogButton onClick={onClickToggleModal}>예매 취소</DialogButton>
 		</Main>
 	);

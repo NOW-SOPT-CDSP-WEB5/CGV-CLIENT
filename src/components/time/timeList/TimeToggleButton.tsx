@@ -13,7 +13,7 @@ function TimeToggleButton({ isOpenTimeList, setOpenTimeList }: TimeToggleButtonP
 			onClick={() => setOpenTimeList(!isOpenTimeList)}
 			$isOpenTimeList={isOpenTimeList} // 상태를 전달
 		>
-			<img src={timeIcons.icArrowUp} alt="예매 시간 토글 버튼" />
+			<StyledImage src={timeIcons.icArrowUp} alt="예매 시간 토글 버튼" $isOpenTimeList={isOpenTimeList} />
 		</TimeToggleButtonWrapper>
 	);
 }
@@ -28,9 +28,12 @@ const TimeToggleButtonWrapper = styled.button<{ $isOpenTimeList: boolean }>`
 	height: 2.8rem;
 
 	background-color: transparent;
-	transform: ${({ $isOpenTimeList }) => ($isOpenTimeList ? 'rotate(180deg)' : 'rotate(0deg)')};
 	cursor: pointer;
 	border: none;
+`;
+
+const StyledImage = styled.img<{ $isOpenTimeList: boolean }>`
+	transform: ${({ $isOpenTimeList }) => ($isOpenTimeList ? 'rotate(0deg)' : 'rotate(180deg)')};
 
 	transition: transform 0.3s ease;
 `;

@@ -1,9 +1,11 @@
 import styled from 'styled-components';
+import { useState } from 'react';
 import Typo from '../../../styles/typo/typo';
 import { getColorByDay, formatDate, formatToday } from '../../../utils/time/dateUtils';
 import timeIcons from '../../../assets/time/icon/index';
 
 function ThisWeek() {
+	const [selectedDay, setSelectedDay] = useState<number | null>(null);
 	const today = new Date();
 
 	/** 이번주 일주일 생성 */
@@ -21,26 +23,36 @@ function ThisWeek() {
 		};
 	});
 
+	const handleDayClick = (day: number) => {
+		setSelectedDay(day);
+	};
+
 	return (
 		<>
-			<TodayWrapper>
-				{/* util에서 오늘 날짜 불러오기 */}
-				<Typo.Title.Title4M16>{formatToday(today)} </Typo.Title.Title4M16>
-				<Blue>오늘</Blue>
-			</TodayWrapper>
+			<ThisWeekContainer>
+				<TodayWrapper>
+					{/* util에서 오늘 날짜 불러오기 */}
+					<Typo.Title.Title4M16>{formatToday(today)} </Typo.Title.Title4M16>
+					<Blue>오늘</Blue>
+				</TodayWrapper>
 
-			<WeekDateContainer>
-				{weekDates.map((weekDate) => (
-					<WeekDateWrapper key={weekDate.uniqueKey}>
-						<Typo.Head.Head1SB17>{weekDate.day}</Typo.Head.Head1SB17>
-						{weekDate.label === '내일' ? (
-							<Red>{weekDate.label}</Red>
-						) : (
-							<DayOfWeek $dayOfWeek={weekDate.dayOfWeek}>{weekDate.dayOfWeek}</DayOfWeek>
-						)}
-					</WeekDateWrapper>
-				))}
-			</WeekDateContainer>
+				<WeekDateContainer>
+					{weekDates.map((weekDate) => (
+						<WeekDateWrapper
+							key={weekDate.uniqueKey}
+							onClick={() => handleDayClick(weekDate.day)}
+							$isSelected={selectedDay === weekDate.day}
+						>
+							<Typo.Head.Head1SB17>{weekDate.day}</Typo.Head.Head1SB17>
+							{weekDate.label === '내일' ? (
+								<Red>{weekDate.label}</Red>
+							) : (
+								<DayOfWeek $dayOfWeek={weekDate.dayOfWeek}>{weekDate.dayOfWeek}</DayOfWeek>
+							)}
+						</WeekDateWrapper>
+					))}
+				</WeekDateContainer>
+			</ThisWeekContainer>
 			<SortBar>
 				<Typo.Title.Title3SB14>• 영화순</Typo.Title.Title3SB14>
 				<Typo.Body.Body3M14>극장순</Typo.Body.Body3M14>
@@ -54,12 +66,20 @@ function ThisWeek() {
 	);
 }
 
+const ThisWeekContainer = styled.div`
+	position: sticky;
+	top: 4.4rem;
+	z-index: 10;
+
+	background-color: ${({ theme }) => theme.GreyScale.White};
+`;
+
 const TodayWrapper = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	margin-bottom: 1rem;
-	padding: 2rem;
+	padding: 1.5rem 0 0.3rem;
 
 	color: ${(props) => props.theme.GreyScale.BG};
 `;
@@ -70,16 +90,32 @@ interface DayOfWeekProps {
 
 /* util에서 요일 색상 불러오기 */
 const DayOfWeek = styled(Typo.Body.Body5M13)<DayOfWeekProps>`
-	margin-top: 1rem;
+	margin-top: 0.8rem;
 
 	color: ${({ $dayOfWeek }) => getColorByDay($dayOfWeek)};
 `;
 
-const WeekDateWrapper = styled.div`
+interface WeekDateWrapperProps {
+	$isSelected: boolean;
+}
+
+const WeekDateWrapper = styled.div<WeekDateWrapperProps>`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 1rem;
+	margin-bottom: 1rem;
+
+	cursor: pointer;
+	border-radius: 8px;
+
+	:first-child {
+		padding: 1rem;
+
+		color: ${({ $isSelected, theme }) => ($isSelected ? theme.GreyScale.White : theme.GreyScale.Black)};
+
+		background-color: ${({ $isSelected, theme }) => ($isSelected ? theme.Color.Point : 'transparent')};
+		border-radius: 11px;
+	}
 `;
 
 const WeekDateContainer = styled.div`
@@ -101,6 +137,7 @@ const Red = styled(Typo.Body.Body5M13)`
 
 	color: ${(props) => props.theme.Color.Point};
 `;
+
 const SortBar = styled.div`
 	display: flex;
 	gap: 1rem;
@@ -124,6 +161,7 @@ const SortBar = styled.div`
 const Filter = styled(Typo.Body.Body3M14)`
 	color: ${({ color, theme }) => color || theme.GreyScale.BG};
 `;
+
 const FilterWrapper = styled.div`
 	position: relative;
 	left: 16rem;

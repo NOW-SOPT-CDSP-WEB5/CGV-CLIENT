@@ -2,18 +2,18 @@ import styled from 'styled-components';
 import Typo from '../../styles/typo/typo';
 import OverViewBtn from './OverViewBtn';
 
-type Props = { text: string; main: boolean };
+type Props = { text: string; main: boolean; onClick?: () => void };
 
 /** 섹션제목 */
-function HomeSectionTitle(props: Props) {
-	const { text, main } = props;
+function HomeSectionTitle({ text, main, onClick = () => {} }: Props) {
 	return (
 		<SectionTitle>
 			{main ? <Typo.Title.Title6B18>{text}</Typo.Title.Title6B18> : <Typo.Title.Title8B15>{text}</Typo.Title.Title8B15>}
-			<OverViewBtn />
+			<OverViewBtn onClick={onClick} />
 		</SectionTitle>
 	);
 }
+
 const SectionTitle = styled.div`
 	display: flex;
 	align-items: center;

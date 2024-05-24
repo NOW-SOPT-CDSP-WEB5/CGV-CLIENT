@@ -12,20 +12,23 @@ function TopBar() {
 				</IconContainer>
 			</LeftArrowIconWrapper>
 			<CenterTitleWrapper>
-				<Typo.Head.Head1SB17>빠른 예매 </Typo.Head.Head1SB17>
+				<Typo.Head.Head1SB17>빠른예매</Typo.Head.Head1SB17>
 			</CenterTitleWrapper>
 		</BarContainer>
 	);
 }
 
 const BarContainer = styled.div`
-	position: relative;
+	position: fixed;
+	top: 0;
+	z-index: 10;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 100%;
+	width: 37.5rem;
 	height: 4.4rem;
-	${({ theme }) => theme.GreyScale.White};
+
+	background-color: ${({ theme }) => theme.GreyScale.White};
 `;
 
 const LeftArrowIconWrapper = styled.div`

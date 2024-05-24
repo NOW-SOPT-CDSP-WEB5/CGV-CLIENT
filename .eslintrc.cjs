@@ -14,6 +14,7 @@ module.exports = {
 	parser: '@typescript-eslint/parser',
 	plugins: ['react', 'react-hooks', 'react-refresh', '@typescript-eslint'],
 	rules: {
+		'react/require-default-props': 'off',
 		'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
 		'react/jsx-filename-extension': ['warn', { extensions: ['.tsx'] }],
 		'react/react-in-jsx-scope': 'off',

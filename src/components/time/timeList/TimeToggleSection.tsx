@@ -5,7 +5,7 @@ import TimeToggleButton from './TimeToggleButton';
 import TimeList from './TimeList';
 
 function TimeToggleSection() {
-	const [isOpenTimeList, setOpenTimeList] = useState<boolean>(true);
+	const [isOpenTimeList, setOpenTimeList] = useState<boolean>(false);
 	return (
 		<TimeToggleSectionContainer>
 			<TimeToggleSectionWrapper>

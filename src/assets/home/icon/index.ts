@@ -7,6 +7,7 @@ import icHomePopcorn from './ic_home_popcorn.svg';
 import icHomeSchedule from './ic_home_schedule.svg';
 import icHomeArrow from './ic_home_arrow1.svg';
 import icHomeEgg from './ic_home_egg.png';
+import icHomeGoldenEgg from './ic_home_goldenegg.png';
 import icHomeLine from './ic_home_line.svg';
 import icHomeAge from './ic_home_age.png';
 
@@ -22,6 +23,7 @@ const homeIcons = {
 	},
 	icHomeArrow,
 	icHomeEgg,
+	icHomeGoldenEgg,
 	icHomeLine,
 	icHomeAge,
 };

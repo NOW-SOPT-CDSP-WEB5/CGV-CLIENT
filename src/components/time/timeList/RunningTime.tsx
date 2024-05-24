@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 import Typo from '../../../styles/typo/typo';
+import { TimeType } from '../../../types/time/types';
+import formatTime from '../../../utils/time/hourMinuteUtils';
 
-function RunningTime() {
+function RunningTime({ startAt, endAt }: TimeType) {
 	return (
 		<RunningTimeWrapper>
-			<Typo.Title.Title6B18>07:40</Typo.Title.Title6B18>
-			<EndTime>~09:39</EndTime>
+			<Typo.Title.Title6B18>{formatTime(startAt)}</Typo.Title.Title6B18>
+			<EndTime>~{formatTime(endAt)}</EndTime>
 		</RunningTimeWrapper>
 	);
 }

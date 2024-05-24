@@ -3,14 +3,19 @@ import MovieIcons from '../../assets/movie/icon';
 import MoviePosterImgEx from '../../assets/movie/images/img_movie_bg.svg'; // 예시 파일입니다.
 import Typo from '../../styles/typo/typo';
 
-function MoviePoster() {
+interface MoviePosterProps {
+    title: string;
+}
+
+function MoviePoster({title}: MoviePosterProps) {
+
 	return (
 		<MoviePosterContainer>
-			<MoviePosterImg src={MoviePosterImgEx} alt="범죄도시" />
+			<MoviePosterImg src={MoviePosterImgEx} alt={title} />
 			<GradientOverlay />
 			<MoviePlayingIcon src={MovieIcons.moviePoster.icMoviePlaying} alt="playing" />
 			<MoviePosterTextWapper>
-				<MovieTitleText>범죄도시4</MovieTitleText>
+				<MovieTitleText>{title}</MovieTitleText>
 				<MovieSubTitleText>THE ROUNDUP: PUNISHMENT</MovieSubTitleText>
 				<MovieInfoText>
 					2024.04.24 개봉 <MovieInfoSpanText>|</MovieInfoSpanText> 1시간 49분 <MovieInfoSpanText>|</MovieInfoSpanText>{' '}
@@ -65,7 +70,6 @@ const MoviePosterTextWapper = styled.div`
 	flex-direction: column;
 	gap: 0.5rem;
 	align-items: center;
-
 `;
 
 const MovieTitleText = styled(Typo.Title.Title6B18)`
