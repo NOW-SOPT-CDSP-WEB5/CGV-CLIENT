@@ -4,7 +4,7 @@ import Typo from '../../styles/typo/typo';
 
 function Footer() {
 	return (
-		<>
+		<FooterLayout>
 			<FooterTopContainer>
 				<FooterTopLabel>공지사항</FooterTopLabel>
 				<img src={commonIcons.icPutterLine} alt="|" height={6} />
@@ -29,12 +29,15 @@ function Footer() {
 					<Typo.Caption.Caption2R11>법적고지</Typo.Caption.Caption2R11>
 				</FooterBottomWrapper>
 			</FooterBottomContainer>
-		</>
+		</FooterLayout>
 	);
 }
 
 export default Footer;
 
+const FooterLayout = styled.div`
+	position: relative;
+`;
 const FooterTopLabel = styled(Typo.Body.Body2R12)`
 	margin: 2.8rem;
 `;
