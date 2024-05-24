@@ -70,7 +70,7 @@ function BottomBar() {
 				<TicketText>{ticket ? '예매된 영화' : '지금 예매하기'}</TicketText>
 			</TicketBtn>
 
-			{isModalOpen && <CancelModal onClickToggleModal={toggleModal} setTicket={setTicket}/>}
+			{isModalOpen && <CancelModal onClickToggleModal={toggleModal} setTicket={setTicket} />}
 		</BottomBarWapper>
 	);
 }
