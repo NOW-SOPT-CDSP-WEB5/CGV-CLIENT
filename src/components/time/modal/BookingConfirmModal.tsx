@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 import timeImages from '../../../assets/time/images';
 import Typo from '../../../styles/typo/typo';
 import Modal from '../../common/modal/Modal';
@@ -10,10 +11,13 @@ interface BookingConfirmModalProps {
 
 /** 예매 확인 모달 */
 function BookingConfirmModal({ onClickToggleModal }: BookingConfirmModalProps) {
+	const navigate = useNavigate();
+
 	// 3초 표시되고 닫기
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			onClickToggleModal();
+			navigate('/movie/3');
 		}, 3000);
 
 		return () => clearTimeout(timer);
