@@ -23,12 +23,17 @@ function RunningTimeSeatsWrapper({ startAt, endAt, remainingSeats }: TimeType) {
 	return (
 		<>
 			{isBookingModalOpen && (
-				<BookingModal onClickToggleModal={onClickToggleBookingModal} onConfirmBooking={onClickToggleBookingConfirm} />
+				<BookingModal
+					onClickToggleModal={onClickToggleBookingModal}
+					onConfirmBooking={onClickToggleBookingConfirm}
+					startAt={startAt}
+					endAt={endAt}
+				/>
 			)}
 			{isBookingConfirmOpen && <BookingConfirmModal onClickToggleModal={onClickToggleBookingConfirm} />}
 			<TimeSeatsWrapper onClick={onClickToggleBookingModal}>
 				<RunningTime startAt={startAt} endAt={endAt} remainingSeats={0} />
-			  <Seats remainingSeats={remainingSeats} startAt="" endAt="" />
+				<Seats remainingSeats={remainingSeats} startAt="" endAt="" />
 			</TimeSeatsWrapper>
 		</>
 	);
