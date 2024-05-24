@@ -3,3 +3,4 @@ export interface MoviePosterType {
 	script: string;
 	isLiked: boolean;
 	isTicketed: boolean;
+}
