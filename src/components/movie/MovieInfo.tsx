@@ -2,12 +2,16 @@ import styled from 'styled-components';
 import InfoEgg from './MovieInfo/MovieInfoEgg';
 import InfoSummary from './MovieInfo/MovieInfoSummary';
 
-function MovieInfo() {
+interface MoviePosterProps {
+    script: string;
+}
+
+function MovieInfo({ script }: MoviePosterProps) {
 	return (
 		<MovieInfoLayout>
 			<InfoEgg />
 			<Border />
-			<InfoSummary />
+			<InfoSummary script={script}/>
 		</MovieInfoLayout>
 	);
 }

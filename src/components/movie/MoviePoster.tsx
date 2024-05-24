@@ -1,23 +1,13 @@
 import styled from 'styled-components';
-import { useState, useEffect } from 'react';
 import MovieIcons from '../../assets/movie/icon';
 import MoviePosterImgEx from '../../assets/movie/images/img_movie_bg.svg'; // 예시 파일입니다.
 import Typo from '../../styles/typo/typo';
-import getDetail from '../../apis/getDetail';
 
-function MoviePoster() {
-	const [title, setTitle] = useState<string>('');
+interface MoviePosterProps {
+    title: string;
+}
 
-	const loadTitleData = async (movieId: number) => {
-		const res = await getDetail(movieId);
-		if (res) {
-			setTitle(res.title);
-		}
-	};
-
-	useEffect(() => {
-		loadTitleData(3);
-	}, []);
+function MoviePoster({title}: MoviePosterProps) {
 
 	return (
 		<MoviePosterContainer>
