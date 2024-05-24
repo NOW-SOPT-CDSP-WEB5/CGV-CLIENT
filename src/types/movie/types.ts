@@ -5,8 +5,3 @@ export interface MoviePosterType {
 	isticketed: boolean;
 }
 
-export interface MovieHeartType {
-	status: number;
-	success: boolean;
-	message: string;
-}
