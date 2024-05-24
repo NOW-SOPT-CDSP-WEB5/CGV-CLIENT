@@ -3,10 +3,9 @@
 <h2>🎥 CGV 🍿</h2>
 
 
-<div>NOW SPOT WEB 5조</div>
+<div>NOW SOPT WEB 5조</div>
 
-![pngwing com](https://github.com/NOW-SOPT-CDSP-WEB5/CGV-CLIENT/assets/99737532/cd3b37d4-8edc-4e0b-bdf4-ff5f4d6f8426)
-
+<img src="https://github.com/NOW-SOPT-CDSP-WEB5/CGV-CLIENT/assets/99737532/cd3b37d4-8edc-4e0b-bdf4-ff5f4d6f8426" width="200" alt="프로필사진"/>
 
 </div>
 
@@ -22,9 +21,9 @@
 
 <table align="center">
     <tr align="center">
-      <td style="min-width: 150px;">
-            <a href="">
-              <img src="" width="200" alt="프로필사진"/>
+      <td style="width: 150px;">
+            <a href="https://github.com/wrryu09">
+              <img src="https://github.com/NOW-SOPT-CDSP-WEB5/CGV-CLIENT/assets/98469609/7c108dc7-4424-4bee-8be7-4f9554323c7f" width="200" alt="프로필사진"/>
               <br />
               <b></b>
             </a>
@@ -36,9 +35,9 @@
               <b></b>
             </a>
         </td>
-       <td style="min-width: 150px;">
-            <a href="">
-              <img src="" width="200" alt="프로필사진"/>
+       <td style="width: 150px;">
+            <a href="https://github.com/chaeneey">
+              <img src="https://github.com/NOW-SOPT-CDSP-WEB5/CGV-CLIENT/assets/98469609/cfeeaefd-ab26-4edc-ab7a-ee9ad00eb64e" width="200" alt="프로필사진"/>
               <br />
               <b></b>
             </a>
@@ -57,13 +56,13 @@
     </tr>
   	<tr align="center">
        <td>
-             페이지 <br/>
+             홈 페이지 <br/>리스트 페이지<br/>광고 목록 API 연결<br/>영화 랭킹 목록 API 연결 <br/>
       </td>
        <td>
-             영화 상영관 시간 불러오기<br/>&영화 예매 <br/>
+             영화 상영관 페이지<br/>영화 예매하기 API 연결<br/>영화관, 상영관 리스트 API 연결
       </td>
        <td>
-           페이지 <br/>
+           영화 정보 페이지<br/>영화 상세정보 API 연결<br/>좋아요, 좋아요 취소 API 연결<br/>예매 취소 API 연결
       </td>       
     </tr>
 </table>
@@ -102,7 +101,16 @@
 
 ## 🖋️ 브랜치 전략
 
-Github-flow
+`Github-flow`
+
+- 브랜치명
+    - **camelCase**
+
+```tsx
+develop
+ ㄴ feature/featureName
+ ㄴ fix/fixContent
+```
 
 <br />
 
