@@ -29,28 +29,30 @@ function ThisWeek() {
 
 	return (
 		<>
-			<TodayWrapper>
-				{/* util에서 오늘 날짜 불러오기 */}
-				<Typo.Title.Title4M16>{formatToday(today)} </Typo.Title.Title4M16>
-				<Blue>오늘</Blue>
-			</TodayWrapper>
+			<ThisWeekContainer>
+				<TodayWrapper>
+					{/* util에서 오늘 날짜 불러오기 */}
+					<Typo.Title.Title4M16>{formatToday(today)} </Typo.Title.Title4M16>
+					<Blue>오늘</Blue>
+				</TodayWrapper>
 
-			<WeekDateContainer>
-				{weekDates.map((weekDate) => (
-					<WeekDateWrapper
-						key={weekDate.uniqueKey}
-						onClick={() => handleDayClick(weekDate.day)}
-						$isSelected={selectedDay === weekDate.day}
-					>
-						<Typo.Head.Head1SB17>{weekDate.day}</Typo.Head.Head1SB17>
-						{weekDate.label === '내일' ? (
-							<Red>{weekDate.label}</Red>
-						) : (
-							<DayOfWeek $dayOfWeek={weekDate.dayOfWeek}>{weekDate.dayOfWeek}</DayOfWeek>
-						)}
-					</WeekDateWrapper>
-				))}
-			</WeekDateContainer>
+				<WeekDateContainer>
+					{weekDates.map((weekDate) => (
+						<WeekDateWrapper
+							key={weekDate.uniqueKey}
+							onClick={() => handleDayClick(weekDate.day)}
+							$isSelected={selectedDay === weekDate.day}
+						>
+							<Typo.Head.Head1SB17>{weekDate.day}</Typo.Head.Head1SB17>
+							{weekDate.label === '내일' ? (
+								<Red>{weekDate.label}</Red>
+							) : (
+								<DayOfWeek $dayOfWeek={weekDate.dayOfWeek}>{weekDate.dayOfWeek}</DayOfWeek>
+							)}
+						</WeekDateWrapper>
+					))}
+				</WeekDateContainer>
+			</ThisWeekContainer>
 			<SortBar>
 				<Typo.Title.Title3SB14>• 영화순</Typo.Title.Title3SB14>
 				<Typo.Body.Body3M14>극장순</Typo.Body.Body3M14>
@@ -64,12 +66,20 @@ function ThisWeek() {
 	);
 }
 
+const ThisWeekContainer = styled.div`
+	position: sticky;
+	top: 4.4rem;
+	z-index: 10;
+
+	background-color: ${({ theme }) => theme.GreyScale.White};
+`;
+
 const TodayWrapper = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	margin-bottom: 1rem;
-	padding: 2rem;
+	padding: 1.5rem 0 0.3rem;
 
 	color: ${(props) => props.theme.GreyScale.BG};
 `;
