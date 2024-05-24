@@ -4,7 +4,7 @@ import serverAxios from './serverAxios';
 // 영화 예매 API 함수
 const postMoviesTickets = async () => {
 	try {
-		const response = await serverAxios.post('/api/v1/movies/3/tickets', { theaterId: 1 });
+		const response = await serverAxios.post('/api/v1/movies/17/tickets', { theaterId: 17 });
 		return response;
 	} catch (error) {
 		if (isAxiosError(error)) {

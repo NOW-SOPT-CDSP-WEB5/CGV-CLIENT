@@ -20,11 +20,13 @@ function BottomBar() {
 		if (res) {
 			setLike(res.isLiked);
 			setTicket(res.isticketed);
+			// setTicket(true);
+			console.log(res);
 		}
 	};
 
 	useEffect(() => {
-		loadData(3);
+		loadData(17);
 	}, [like, ticket]);
 
 	const handleHeartBtn = async (movieId: number) => {
@@ -46,7 +48,7 @@ function BottomBar() {
 			const res = await DeleteMovieTickets(movieId);
 			if (res) {
 				setIsModalOpen(true); // 취소 모달 등장
-				setTicket(false);
+				setTicket(false); // 이거 취소 모달에서 실행해야 할 듯
 			}
 		} else {
 			navigate('/time');
