@@ -8,10 +8,11 @@ import DeleteMovieTickets from '../../../apis/DeleteMoviesTickets';
 
 interface CancelModalProps {
 	onClickToggleModal: () => void;
+	setTicket: (value: boolean) => void;
 }
 
 /** 예매취소 모달 내용 */
-function CancelModal({ onClickToggleModal, children }: PropsWithChildren<CancelModalProps>) {
+function CancelModal({ onClickToggleModal, setTicket, children }: PropsWithChildren<CancelModalProps>) {
 	const [isCancelConfirmed, setCancelConfirmed] = useState(false);
 	const navigate = useNavigate();
 
@@ -19,6 +20,7 @@ function CancelModal({ onClickToggleModal, children }: PropsWithChildren<CancelM
 			const res = await DeleteMovieTickets(movieId);
 			if (res) {
 				setCancelConfirmed(true);
+				setTicket(false);
 			}
 	};
 
