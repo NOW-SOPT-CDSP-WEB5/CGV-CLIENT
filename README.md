@@ -1,10 +1,21 @@
 <div align="center">
 
-<h2>CGV</h2>
+<h2>🎥 CGV 🍿</h2>
+
 
 <div>NOW SPOT WEB 5조</div>
 
+![pngwing com](https://github.com/NOW-SOPT-CDSP-WEB5/CGV-CLIENT/assets/99737532/cd3b37d4-8edc-4e0b-bdf4-ff5f4d6f8426)
+
+
 </div>
+
+<h2>📌 합동 세미나 - CGV</h2>    
+
+- 디자인 파트원들이 UX개선을 위해 기존의 서비스를 리디자인 해온 것을 서버파트와 함께 협업하여 구현하고 디자인 파트, 기획파트와 협업을 경험해볼 수 있는 세미나입니다.    
+
+- 웹 3팀은 CGV 리디자인을 진행했습니다 :)
+
 
 
 <h2> 👥 Team </h2>
@@ -20,7 +31,7 @@
         </td>
       <td style="min-width: 150px;">
             <a href="https://github.com/ijieun">
-              <img src="" width="200" alt="프로필사진"/>
+              <img src="https://avatars.githubusercontent.com/u/99737532?v=4" width="200" alt="프로필사진"/>
               <br />
               <b></b>
             </a>
@@ -135,4 +146,10 @@ Github-flow
 ```
 
 
+## 🌳 구현 View Preview
+|  Main View |          List View        | Movie View         |   Time View         |
+| :-------------: | :--------------------------: | :--------------------------: |:--------------------------: |
+|     ![home_short](https://github.com/NOW-SOPT-CDSP-WEB5/CGV-CLIENT/assets/99737532/d3136f85-a6e5-4f4b-9dc2-16a6a7e1ae57) |  ![list_short](https://github.com/NOW-SOPT-CDSP-WEB5/CGV-CLIENT/assets/99737532/8685f1e9-e9a1-492d-a60d-a98f48d0969c)  |  ![movie](https://github.com/NOW-SOPT-CDSP-WEB5/CGV-CLIENT/assets/99737532/165eae79-95c3-4620-8d9f-0d7a6b256f80)  | ![time_short](https://github.com/NOW-SOPT-CDSP-WEB5/CGV-CLIENT/assets/99737532/ce8392b3-9b41-4a0e-abf1-247b01a31f3b)
+
+### 
 
