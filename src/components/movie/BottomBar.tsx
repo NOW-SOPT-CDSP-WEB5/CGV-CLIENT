@@ -6,7 +6,6 @@ import Typo from '../../styles/typo/typo';
 import getDetail from '../../apis/getDetail';
 import postHearts from '../../apis/postHearts';
 import DeleteHearts from '../../apis/DeleteHearts';
-import DeleteMovieTickets from '../../apis/DeleteMoviesTickets';
 import CancelModal from './modal/CancelModal';
 
 function BottomBar() {
@@ -42,17 +41,14 @@ function BottomBar() {
 		}
 	};
 
-	const handleTicketBtn = async (movieId: number) => {
+	const handleTicketBtn = () => {
 		if (ticket) {
-			const res = await DeleteMovieTickets(movieId);
-			if (res) {
-				setIsModalOpen(true); // 취소 모달 등장
-				setTicket(false); // 이거 취소 모달에서 실행해야 할 듯
-			}
-		} else {
+			setIsModalOpen(true); // 취소 모달 등장
+		}
+		else {
 			navigate('/time');
+		}
 	}
-}
 
 	const toggleModal = () => {
 		setIsModalOpen(!isModalOpen);
@@ -71,11 +67,11 @@ function BottomBar() {
 				<img src={movieIcons.BottomBar.icBtnShare} alt="btn-share" />
 			</BottomBarBtn>
 
-			<TicketBtn type="button" $ticket={ticket} onClick={() => handleTicketBtn(3)}>
+			<TicketBtn type="button" $ticket={ticket} onClick={handleTicketBtn}>
 				<TicketText>{ticket ? '예매된 영화' : '지금 예매하기'}</TicketText>
 			</TicketBtn>
 
-			{isModalOpen && <CancelModal onClickToggleModal={toggleModal} />}
+			{isModalOpen && <CancelModal onClickToggleModal={toggleModal}/>}
 		</BottomBarWapper>
 	);
 }

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Modal from '../../common/modal/Modal';
 import Typo from '../../../styles/typo/typo';
 import CancelConfirmModal from './CancelConfirmModal';
+import DeleteMovieTickets from '../../../apis/DeleteMoviesTickets';
 
 interface CancelModalProps {
 	onClickToggleModal: () => void;
@@ -14,8 +15,11 @@ function CancelModal({ onClickToggleModal, children }: PropsWithChildren<CancelM
 	const [isCancelConfirmed, setCancelConfirmed] = useState(false);
 	const navigate = useNavigate();
 
-	const handleCancelClick = () => {
-		setCancelConfirmed(true);
+	const handleCancelClick = async(movieId: number) => {
+			const res = await DeleteMovieTickets(movieId);
+			if (res) {
+				setCancelConfirmed(true);
+			}
 	};
 
 	// 3초 모달 표시되고 닫기
@@ -51,7 +55,7 @@ function CancelModal({ onClickToggleModal, children }: PropsWithChildren<CancelM
 						<CloseButton type="button" onClick={onClickToggleModal}>
 							<Typo.Head.Head1SB17>닫기</Typo.Head.Head1SB17>
 						</CloseButton>
-						<CancelButton type="button" onClick={handleCancelClick}>
+						<CancelButton type="button" onClick={() => handleCancelClick(3)}>
 							<Typo.Head.Head1SB17>예매 취소하기</Typo.Head.Head1SB17>
 						</CancelButton>
 					</ButtonWrapper>
