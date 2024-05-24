@@ -4,3 +4,9 @@ export interface MoviePosterType {
 	isLiked: boolean;
 	isTicketed: boolean;
 }
+
+export interface MovieHeartType {
+	status: number;
+	success: boolean;
+	message: string;
+}
